@@ -1,0 +1,19 @@
+/*Estilos para a página de Plantio*/
+
+.container {
+  max-width: 500px;
+  margin: 50px auto; /* Centraliza na tela */
+  padding: 20px;
+  background-color: #ffffff;
+  align-items: center;    /* Centraliza na horizontal */
+  justify-content: center; /* Centraliza na vertical (se houver altura definida) */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  font-family: Arial, sans-serif;
+}
+
+.container h1 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
