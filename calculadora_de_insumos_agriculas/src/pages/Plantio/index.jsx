@@ -1,51 +1,50 @@
 import "./style.css";
 import { useState } from "react";
+import InputArea from "../../components/InputArea.jsx";
+import SelectCultura from "../../components/SelectCultura.jsx";
+import BotaoCalcular from "../../components/BotaoCalcular.jsx";
+import Resultado from "../../components/Resultado.jsx";
 
 function Plantio() {
-  const [area, setArea] = useState(""); // estado para armazenar a área plantada
-  const [culturaSelecionada, setCulturaSelecionada] = useState(""); // estado para armazenar a cultura selecionada
-  const [resultado, setResultado] = useState(null); // estado para armazenar o resultado do cálculo
-  const culturas = { // dados das culturas
-    soja: { nome: "Soja", rendimento: 45, sacoKg: 40 },
-    milho: { nome: "Milho", rendimento: 20, sacoKg: 20 },
+  const [area, setArea] = useState("");
+  const [cultura, setCultura] = useState("");
+  const [dadosCalculados, setDadosCalculados] = useState(null);
+
+  //Tamanho do Saco de milho: 20kg , Soja: 40kg
+  //rendimento por hectare milho: 20kg/ha, soja: 45kg/ha
+
+  const culturas = {
+    soja: { rendimento: 45, sacoKg: 40 },
+    milho: { rendimento: 20, sacoKg: 20 },
   };
+  // Função para calcular os insumos
+  const calcularSafra = (e) => {
+    e.preventDefault(); // Impede a página de recarregar
 
-  const calcular = (e) => { // funcão para calcular os insumos
-    e.preventDefault(); 
+    const info = culturas[cultura];
+    const kgTotal = area * info.rendimento;
+    const sacosTotal = Math.ceil(kgTotal / info.sacoKg); // Arredonda para cima conforme o requisito
 
-    if (!area || !culturaSelecionada) {
-      alert("Preencha todos os campos!"); // validação dos campos
-      return;
-    }
-
-    const info = culturas[culturaSelecionada];
-    const totalKg = area * info.rendimento;
-    const totalSacos = Math.ceil(totalKg / info.sacoKg);
-
-    setResultado({ kg: totalKg, sacos: totalSacos });
+    // Salva o objeto com os valores calculados
+    setDadosCalculados({ kg: kgTotal, sacos: sacosTotal });
   };
 
   return (
     <div className="container">
-      <form>
+      <form onSubmit={calcularSafra}>
         <h1>Planejamento de Safra</h1>
-        <input
-          placeholder="Área (ha)"
-          name="Área"
-          type="number"
-          value={area}
-          onChange={(e) => setArea(e.target.value)}
+        <InputArea area={area} setArea={setArea} />
+        <SelectCultura
+          culturaSelecionada={cultura}
+          setCulturaSelecionada={setCultura}
         />
-        <select
-          id="cultura"
-          value={culturaSelecionada}
-          onChange={(e) => setCulturaSelecionada(e.target.value)}
-        >
-          <option value="">Selecione a Cultura</option>
-          <option value="soja">Soja</option>
-          <option value="milho">Milho</option>
-        </select>
+        <BotaoCalcular texto="Calcular" />
       </form>
+      <div className="resultado">
+        {/* Resultados dos cálculos serão exibidos aqui */}
+        <h3>Resultado:</h3>
+        <Resultado dados={dadosCalculados} />
+      </div>
     </div>
   );
 }
