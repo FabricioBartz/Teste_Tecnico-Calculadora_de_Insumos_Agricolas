@@ -1,25 +1,25 @@
 .sidebar {
   width: 240px;
   height: 100vh;
-  background-color: #7A8D32; /* Verde Oliva do seu Figma */
+  background-color: #7a8d32; /* Verde Oliva do seu Figma */
   display: flex;
   flex-direction: column;
   transition: width 0.3s ease; /* Faz o efeito de "deslizar" ao fechar */
-  padding: 24px 16px;
-  color: white;
+  color: #F5F3EE;
   overflow: hidden;
+  
 }
 
 .collapsed {
+  
   width: 50px; /* Largura para o modo apenas ícones */
 }
 
 .logoContainer {
+  padding: 20px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 24px; /* Arredondado de 25.99px */
-  margin-bottom: 40px;
   position: relative;
 }
 
@@ -31,49 +31,58 @@
 }
 
 .logoText {
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-  white-space: nowrap; /* Impede o texto de quebrar linha enquanto encolhe */
+  display: flex;
+  align-items: center;
+  white-space: nowrap; 
 }
-
 
 /* botao que alterna o sidebar */
 .toggleBtn {
   background: none;
   border: none;
   cursor: pointer;
-  transition: opacity 0.3s ease; 
+  transition: opacity 0.3s ease;
   padding: 4px;
   display: flex;
   align-items: center;
 }
 
 /* ESTADO: SIDEBAR RECOLHIDA (Collapsed) */
-/* Quando a sidebar tem a classe .collapsed, escondemos o botão do sidebar */
-.collapsed .toggleBtn {
-  opacity: 0;
-  pointer-events: none; /* Evita cliques acidentais enquanto invisível */
-}
-
 /* Quando o mouse passa por cima do logo, torna o botao do side visivel */
 .logoContainer:hover .toggleBtn {
   opacity: 1;
-  pointer-events: auto; 
+  pointer-events: auto;
 }
 
 /* Ajuste para quando estiver colapsado (recolhido) */
 .collapsed .logoContainer {
-  justify-content: center; 
+  justify-content: center;
   
 }
 
 /* faz o botão flutuar sobre o logo */
 .collapsed .toggleBtn {
+  opacity: 0;
+  pointer-events: none;
+  background-color: #6B8718;
+  border-radius: 8px;
   position: absolute;
 }
 
 /* Faz o ícone do AgroHub sumir */
 .collapsed .logoContainer:hover .logoWrapper {
-  opacity: 0; 
+  opacity: 0;
+}
+
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  /* 1. Alinhamento: use 'flex-start' para alinhar à esquerda no modo aberto */
+  align-items: flex-start; 
+  /* 2. O Controle da Distância: */
+  margin-top: 42px; /* Ajuste este valor para definir o espaço exato após o logo */
+  gap: 8px; 
+  flex: 1; 
+  width: 100%;
 }
