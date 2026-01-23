@@ -1,0 +1,22 @@
+/* Botão Notificação */
+.notificationBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+/* Feedback visual ao passar o mouse */
+.notificationBtn:hover {
+  background-color: #E8E0CB; 
+}
+
+/* Feedback visual ao clicar */
+.notificationBtn:active {
+  background-color: #DFD0AB; 
+}

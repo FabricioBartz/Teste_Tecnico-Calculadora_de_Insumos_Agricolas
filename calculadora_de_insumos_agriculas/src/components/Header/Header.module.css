@@ -1,0 +1,40 @@
+.header {
+  /* Dimensões e Posicionamento */
+  height: 72px; 
+  width: 100%; 
+
+  /* Flexbox para alinhar os itens */
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Garante que os itens fiquem centralizados verticalmente */
+
+  /* Espaçamentos internos */
+  padding-left: 24px;
+  padding-right: 32px;
+
+  /* Estilo visual */
+  background-color: #F5F3EE; 
+  opacity: 1; 
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+/* texto */
+.pageTitle {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 24px; 
+  line-height: 1.2; 
+  letter-spacing: 0;
+  color: #111111; 
+  margin: 0;
+  display: flex;
+  align-items: center; 
+}
+
+.userActions {
+  display: flex;
+  align-items: center;
+  gap: 24px; 
+  flex-shrink: 0;
+}

@@ -1,15 +1,36 @@
-/* estilos globais */
-*{
-  margin:0;
-  padding:0;
+/* 1. Import da fonte Work Sans */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  /* Variáveis para facilitar a manutenção */
+  --font-principal: 'Work Sans', sans-serif;
+  
+}
+
+body {
+  /* Aplicando a tipografia */
+  font-family: var(--font-principal);
+  font-weight: 600; 
+  line-height: 1.4; 
+  background-color: var(--cor-fundo);
+  color: #2D3436;
+  -webkit-font-smoothing: antialiased;
 }
 
 #root {
-  display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center;     /* Centraliza verticalmente */
-  min-height: 100vh;       /* Altura total da tela */
-  background: #346751;
+  
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Garante que elementos de formulário usem a Work Sans */
+button, input, select, textarea {
+  font-family: inherit;
+  font-weight: inherit;
 }

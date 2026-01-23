@@ -1,0 +1,16 @@
+.sidebar {
+  /* Dimensões do Figma */
+  width: 240px; /* Arredondando o valor quebrado para estabilidade */
+  height: 100vh; /* Em vez de 900px fixos, usamos 100vh para ocupar toda a altura da tela do usuário */
+  opacity: 1;
+  border-right: 1px solid #E5E7EB; /* border-right-width: 1px conforme o Figma */
+  
+  /* Estilo Visual das Imagens */
+  background-color: #789326; /* O verde oliva que aparece nos seus prints */
+  display: flex;
+  flex-direction: column;
+  transform: rotate(0deg); /* angle: 0 deg */
+  
+  /* Garantia de que não encolha no Flexbox */
+  flex-shrink: 0; 
+}

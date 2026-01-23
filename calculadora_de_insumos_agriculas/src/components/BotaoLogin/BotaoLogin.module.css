@@ -1,0 +1,31 @@
+/* Botão Login */
+.loginBtn {
+  width: 124px;
+  height: 36px;
+  gap: 8px;
+  opacity: 1;
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 8px;
+  color: #6b8718;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  cursor: pointer;
+  border-color: #b1a88e;
+  box-sizing: border-box;
+  transform: rotate(0deg);
+}
+
+/* Feedback visual ao passar o mouse */
+.loginBtn:hover {
+  background-color: #f4fae2;
+}
+
+/* Feedback visual ao clicar */
+.loginBtn:active {
+  background-color: #d6e0b5;
+}
