@@ -1,16 +1,32 @@
 .sidebar {
-  /* Dimensões do Figma */
-  width: 240px; /* Arredondando o valor quebrado para estabilidade */
-  height: 100vh; /* Em vez de 900px fixos, usamos 100vh para ocupar toda a altura da tela do usuário */
-  opacity: 1;
-  border-right: 1px solid #E5E7EB; /* border-right-width: 1px conforme o Figma */
-  
-  /* Estilo Visual das Imagens */
-  background-color: #789326; /* O verde oliva que aparece nos seus prints */
+  width: 240px; /* Largura da image_f635d7 */
+  height: 100vh;
+  background-color: #7A8D32; /* Verde oliva das imagens */
+  transition: width 0.3s ease; /* Transição suave ao fechar */
   display: flex;
   flex-direction: column;
-  transform: rotate(0deg); /* angle: 0 deg */
-  
-  /* Garantia de que não encolha no Flexbox */
-  flex-shrink: 0; 
+  overflow: hidden;
+}
+
+/* Quando a classe .collapsed for adicionada via React */
+.sidebar.collapsed {
+  width: 80px; /* Largura aproximada da image_e98e35 */
+}
+
+.logoText {
+  color: white;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* No SidebarItem.module.css, você esconde o span do texto */
+.itemLabel {
+  transition: opacity 0.2s;
+}
+
+.collapsed .itemLabel {
+  opacity: 0;
+  pointer-events: none;
+  display: none; /* Garante que o texto não ocupe espaço */
 }
