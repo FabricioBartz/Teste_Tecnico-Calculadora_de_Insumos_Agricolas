@@ -1,32 +1,79 @@
 .sidebar {
-  width: 240px; /* Largura da image_f635d7 */
+  width: 240px;
   height: 100vh;
-  background-color: #7A8D32; /* Verde oliva das imagens */
-  transition: width 0.3s ease; /* Transição suave ao fechar */
+  background-color: #7A8D32; /* Verde Oliva do seu Figma */
   display: flex;
   flex-direction: column;
+  transition: width 0.3s ease; /* Faz o efeito de "deslizar" ao fechar */
+  padding: 24px 16px;
+  color: white;
   overflow: hidden;
 }
 
-/* Quando a classe .collapsed for adicionada via React */
-.sidebar.collapsed {
-  width: 80px; /* Largura aproximada da image_e98e35 */
+.collapsed {
+  width: 50px; /* Largura para o modo apenas ícones */
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px; /* Arredondado de 25.99px */
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: opacity 0.2s ease;
 }
 
 .logoText {
-  color: white;
   font-family: 'Work Sans', sans-serif;
   font-weight: 600;
-  white-space: nowrap;
+  font-size: 20px;
+  white-space: nowrap; /* Impede o texto de quebrar linha enquanto encolhe */
 }
 
-/* No SidebarItem.module.css, você esconde o span do texto */
-.itemLabel {
-  transition: opacity 0.2s;
+
+/* botao que alterna o sidebar */
+.toggleBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease; 
+  padding: 4px;
+  display: flex;
+  align-items: center;
 }
 
-.collapsed .itemLabel {
+/* ESTADO: SIDEBAR RECOLHIDA (Collapsed) */
+/* Quando a sidebar tem a classe .collapsed, escondemos o botão do sidebar */
+.collapsed .toggleBtn {
   opacity: 0;
-  pointer-events: none;
-  display: none; /* Garante que o texto não ocupe espaço */
+  pointer-events: none; /* Evita cliques acidentais enquanto invisível */
+}
+
+/* Quando o mouse passa por cima do logo, torna o botao do side visivel */
+.logoContainer:hover .toggleBtn {
+  opacity: 1;
+  pointer-events: auto; 
+}
+
+/* Ajuste para quando estiver colapsado (recolhido) */
+.collapsed .logoContainer {
+  justify-content: center; 
+  
+}
+
+/* faz o botão flutuar sobre o logo */
+.collapsed .toggleBtn {
+  position: absolute;
+}
+
+/* Faz o ícone do AgroHub sumir */
+.collapsed .logoContainer:hover .logoWrapper {
+  opacity: 0; 
 }
