@@ -2,17 +2,19 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  width: 100%;
+  width: 406px;
+  
 }
 
 .input {
-  width: 406px;
+  width: 100%;
   height: 56px;
   padding: 0 16px;
   border: 1px solid #d0ccbf;
   border-radius: 8px;
   background-color: #ffffff;
   box-sizing: border-box;
+  color: #111111;
 
   /* Tipo de fonte */
   font-family:
@@ -21,7 +23,6 @@
   font-size: 16px; 
   line-height: 1.4; 
   letter-spacing: 0;
-  
 }
 
 .input:focus {
@@ -33,4 +34,8 @@
 .input:hover {
   border-color: #B1A88E; /* Cor de borda ao passar o mouse */
 
+}
+
+.input::placeholder {
+  color: #9A9A9A; 
 }

@@ -1,69 +1,113 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 8px; 
-  width: 100%;
-}
-
-
 .selectWrapper {
-  position: relative; /* Base para posicionar a seta absoluta [cite: 2025-11-19] */
-  width: 100%;
+  position: relative;
+  width: 406px;
 }
 
 .select {
-  width: 406px;
-  height: 56px; /* Mesma altura do input de área para alinhar o layout [cite: 2025-11-19] */
+  width: 100%;
+  height: 56px;
   padding: 0 16px;
   border: 1px solid #d0ccbf;
   border-radius: 8px;
-  font-size: 16px;
+  display: flex; /* Para centralizar o texto verticalmente */
+  align-items: center;
   background-color: #ffffff;
   cursor: pointer;
-  
-  /* Remove a seta padrão do sistema (Windows/Mac) */
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  
-   /* Tipo de fonte */
-  font-family:
-    "Work Sans", sans-serif; /* Substitua pelo nome real da sua Font 1 [cite: 2025-11-19] */
-  font-weight: 400; 
-  font-size: 16px; 
-  line-height: 1.4; 
-  letter-spacing: 0;
+  font-family: "Work Sans", sans-serif;
+  color: #111111; /* Cor do placeholder */
+  font-weight: 400;
+  font-style: Regular;
+  transition: border-color 0.2s;
 }
 
 .select:hover {
-  border-color: #B1A88E; /* Cor de borda ao passar o mouse */
+  border-color: #b1a88e; /* Cor de borda ao passar o mouse */
 }
 
-.select:focus {
-  outline: none;
-  border-color: #789326; /* Cor de borda ao clicar */
+/* Quando o campo está aberto, aplica a borda verde */
+.select.active {
+  border-color: #789326;
+  font-family: "Work Sans", sans-serif;
+  color: #9a9a9a; /* Cor do placeholder */
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px; 
 }
 
-
-
-/* Criando a seta personalizada à direita */
+/* Seta Customizada */
 .selectWrapper::after {
-  content: ""; 
-  background-image: url('../../assets/icons/select.svg'); 
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-image: url("../../assets/select.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  font-size: 10px;
-  color: #666;
   position: absolute;
   right: 16px;
-  top: 50%;
+  top: 28px; /* Metade dos 56px */
   transform: translateY(-50%);
-  pointer-events: none; /* Garante que o clique ignore a seta e abra o select */
+  pointer-events: none;
 }
 
-/* Estilo de seleção (mesma lógica do seu Input) */
-.select:focus {
-  outline: none;
-  border-color: #789326; /* Verde do AgroHub ao clicar [cite: 2025-11-19] */
+/* Gira a seta */
+.selectWrapper:has(.active)::after {
+  transform: translateY(-50%) rotate(180deg);
+  filter: invert(48%) sepia(56%) saturate(541%) hue-rotate(34deg)
+    brightness(91%) contrast(88%);
+}
+
+/* Caixa customizada */
+.optionsCustom {
+  font-family: "Work Sans", sans-serif;
+  color: #4e4e4e; /* Cor do placeholder */
+  font-weight: 400;
+  font-style: Regular;
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  background: white;
+  border: 1px solid #d0ccbf;
+  border-radius: 8px;
+  z-index: 10;
+  overflow: hidden;
+  animation: abrirLista 0.3s ease-out;
+}
+/* CONDIÇÃO 1: Texto "Apagado" (Placeholder) */
+.vazio {
+  font-family: "Work Sans", sans-serif;
+  color: #9A9A9A; /* Cor do placeholder */
+  font-weight: 400;
+  font-style: Regular;
+}
+
+/* CONDIÇÃO 2: Texto Selecionado (Ativo) */
+.preenchido {
+  color: #111111; 
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+}
+/* Animação de abertura */
+@keyframes abrirLista {
+  from {
+    opacity: 0;
+    transform: translateY(-10px); 
+  }
+  to {
+    opacity: 1;
+    transform: translateY(
+      0
+    ); 
+  }
+}
+
+.optionItem {
+  padding: 12px 16px;
+  font-family: "Work Sans", sans-serif;
+  cursor: pointer;
+  color: #333;
+}
+
+.optionItem:hover {
+  background-color: #f4fae2; /* Fundo leve ao passar o mouse [cite: 2025-11-19] */
 }

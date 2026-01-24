@@ -1,8 +1,8 @@
-import styles from './Planejamento.module.css';
+import styles from "./Planejamento.module.css";
 import { useState } from "react";
 import InputArea from "../../components/InputArea/InputArea.jsx";
 import SelectCultura from "../../components/SelectCultura/SelectCultura.jsx";
-import BotaoCalcular from "../../components/icons/BotaoCalcular/BotaoCalcular.jsx";
+import BotaoCalcular from "../../components/buttons/BotaoCalcular/BotaoCalcular.jsx";
 import CardResultado from "../../components/CardResultado/CardResultado.jsx";
 
 function PlanejamentoSafra() {
@@ -21,12 +21,15 @@ function PlanejamentoSafra() {
   const calcularSafra = (e) => {
     e.preventDefault(); // Impede a página de recarregar
 
-    const info = culturas[cultura];
-    const kgTotal = area * info.rendimento;
-    const sacosTotal = Math.ceil(kgTotal / info.sacoKg); // Arredonda para cima conforme o requisito
+    const chaveCultura = cultura.toLowerCase();
+    const info = culturas[chaveCultura];
 
-    // Salva o objeto com os valores calculados
-    setDadosCalculados({ kg: kgTotal, sacos: sacosTotal });
+    if (info) {
+      const kgTotal = Number(area) * info.rendimento;
+      const sacosTotal = Math.ceil(kgTotal / info.sacoKg);
+
+      setDadosCalculados({ kg: kgTotal, sacos: sacosTotal });
+    }
   };
 
   //card principal
