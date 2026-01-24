@@ -1,8 +1,6 @@
-/* src/app.css */
-
 .app-layout {
-  display: flex;      /* Alinha Sidebar e Main-container horizontalmente */
-  height: 100vh;      /* Ocupa a altura total da janela */
+  display: flex; /* Alinha Sidebar e Main-container horizontalmente */
+  height: 100vh; /* Ocupa a altura total da janela */
   width: 100vw;
   overflow: hidden;
 }
@@ -10,12 +8,12 @@
 .main-container {
   display: flex;
   flex-direction: column; /* Coloca o Header no topo e o conteúdo embaixo */
-  flex: 1;                /* Faz a área da direita ocupar todo o espaço restante */
+  flex: 1; /* Faz a área da direita ocupar todo o espaço restante */
 }
 
 .content-area {
   flex: 1;
-  background-color: #f4f7f6; /* Cor de fundo clara do seu Figma */
+  background-color: #f4f7f6; /* Cor de fundo clar */
   padding: 40px;
-  overflow-y: auto;       /* Permite rolar apenas o conteúdo central */
+  overflow-y: auto; /* Permite rolar apenas o conteúdo central */
 }

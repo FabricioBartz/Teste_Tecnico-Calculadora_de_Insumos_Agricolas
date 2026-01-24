@@ -4,6 +4,11 @@ import logoicon from "../../assets/logoicon.svg";
 import logotext from "../../assets/logotext.svg";
 import togglesidebar from "../../assets/sidebar.svg";
 import VisaoGeral from "../BotaoVisaoGeral/BotaoVisaoGeral";
+import PlanejamentoSafra from "../BotaoPlanejamentoSafra/BotaoPlanejamentoSafra";
+import AreaPlantio from "../BotaoAreaPlantio/BotaoAreaPlantio";
+import Orcamentos from "../BotaoOrcamentos/BotaoOrcamentos";
+import Monitoramento from "../BotaoMonitoramento/BotaoMonitoramento";
+
 
 export default function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -31,10 +36,21 @@ export default function Sidebar() {
 
       <nav className={styles.menu}>
         {/* Passamos isCollapsed para esconder o texto e isActive para trocar o ícone */}
-        <VisaoGeral 
-          isCollapsed={isCollapsed} 
-          
-        />
+          <VisaoGeral 
+            isCollapsed={isCollapsed} 
+          />
+          <AreaPlantio
+            isCollapsed={isCollapsed} 
+          />
+          <Orcamentos 
+            isCollapsed={isCollapsed} 
+          />
+          <PlanejamentoSafra 
+            isCollapsed={isCollapsed} 
+          />
+          <Monitoramento
+            isCollapsed={isCollapsed} 
+          />
       </nav>
     </aside>
   );

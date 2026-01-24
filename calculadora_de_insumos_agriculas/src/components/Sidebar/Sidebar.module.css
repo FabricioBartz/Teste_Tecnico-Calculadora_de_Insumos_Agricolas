@@ -11,7 +11,7 @@
 }
 
 .logoContainer {
-  padding: 20px 16px;
+  padding: 20px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -88,8 +88,8 @@
   flex-direction: column;
   align-items: flex-start; /* Alinha à esquerda no modo aberto */
   margin-top: 40px;
-  gap: 8px;
-  padding: 0 8px; /* Respiro lateral para os itens não colarem na borda */
+  gap: 4px; /* Espaçamento entre os itens */
+  padding: 0 4px; /* Respiro lateral para os itens não colarem na borda */
   flex: 1;
 }
 
@@ -97,6 +97,6 @@
 .collapsed .menu {
   align-items: center;
   margin-top: 40px; 
-  gap: 8px;/* Centraliza todos os itens (VisaoGeral, etc) */
+  gap: 4px;/* Espaçamento entre os itens */
   padding: 0px;
 }

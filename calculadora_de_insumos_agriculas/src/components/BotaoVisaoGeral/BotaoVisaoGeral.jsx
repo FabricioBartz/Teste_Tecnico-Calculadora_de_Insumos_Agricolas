@@ -4,7 +4,7 @@ import visaogeral_active from '../../assets/visaogeral_active.svg';
 
 export default function VisaoGeral({ isActive, isCollapsed }) {
   return (
-    /* Adicionamos a classe 'collapsed' dinamicamente para o CSS agir */
+   
     <div className={`
       ${styles.item} 
       ${isActive ? styles.active : ''} 
