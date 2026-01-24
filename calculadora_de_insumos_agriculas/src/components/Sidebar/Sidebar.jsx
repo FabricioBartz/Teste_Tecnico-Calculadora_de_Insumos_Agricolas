@@ -8,7 +8,8 @@ import PlanejamentoSafra from "../BotaoPlanejamentoSafra/BotaoPlanejamentoSafra"
 import AreaPlantio from "../BotaoAreaPlantio/BotaoAreaPlantio";
 import Orcamentos from "../BotaoOrcamentos/BotaoOrcamentos";
 import Monitoramento from "../BotaoMonitoramento/BotaoMonitoramento";
-
+import Configuracoes from "../BotaoConfiguracoes/BotaoConfiguracoes";
+import Sair from "../BotaoSair/BotaoSair";
 
 export default function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -18,7 +19,9 @@ export default function Sidebar() {
   const toggleSidebar = () => setIsCollapsed(!isCollapsed);
 
   return (
-    <aside className={`${styles.sidebar} ${isCollapsed ? styles.collapsed : ""}`}>
+    <aside
+      className={`${styles.sidebar} ${isCollapsed ? styles.collapsed : ""}`}
+    >
       <div className={styles.logoContainer}>
         <div className={styles.logoWrapper}>
           <img src={logoicon} alt="AgroHub" />
@@ -35,23 +38,22 @@ export default function Sidebar() {
       </div>
 
       <nav className={styles.menu}>
-        {/* Passamos isCollapsed para esconder o texto e isActive para trocar o ícone */}
-          <VisaoGeral 
-            isCollapsed={isCollapsed} 
-          />
-          <AreaPlantio
-            isCollapsed={isCollapsed} 
-          />
-          <Orcamentos 
-            isCollapsed={isCollapsed} 
-          />
-          <PlanejamentoSafra 
-            isCollapsed={isCollapsed} 
-          />
-          <Monitoramento
-            isCollapsed={isCollapsed} 
-          />
+        {/* Botões do menu principal */}
+        <VisaoGeral isCollapsed={isCollapsed} />
+        <AreaPlantio isCollapsed={isCollapsed} />
+        <Orcamentos isCollapsed={isCollapsed} />
+        <PlanejamentoSafra isCollapsed={isCollapsed} />
+        <Monitoramento isCollapsed={isCollapsed} />
       </nav>
+
+      <div className={styles.bottomSection}>
+        <hr className={styles.divider} />
+        <nav className={styles.menu}>
+          {/* Botões de configurações e sair */}
+          <Configuracoes isCollapsed={isCollapsed} />
+          <Sair isCollapsed={isCollapsed} />
+        </nav>
+      </div>
     </aside>
   );
 }

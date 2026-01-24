@@ -89,7 +89,7 @@
   align-items: flex-start; /* Alinha à esquerda no modo aberto */
   margin-top: 40px;
   gap: 4px; /* Espaçamento entre os itens */
-  padding: 0 4px; /* Respiro lateral para os itens não colarem na borda */
+  padding: 0 8px; /* Respiro lateral para os itens não colarem na borda */
   flex: 1;
 }
 
@@ -99,4 +99,28 @@
   margin-top: 40px; 
   gap: 4px;/* Espaçamento entre os itens */
   padding: 0px;
+  
+}
+
+.bottomSection {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0px;
+  padding-bottom: 42px;
+  gap:4px;
+}
+
+/* A linha horizontal do menu */
+.divider {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Linha sutil e clara */
+  width: calc(100% - 16px);
+  margin: 8px 8px;       /* Diminui a distância do Monitoramento (topo) */
+  margin-bottom: -20px;
+}
+
+.collapsed .divider {
+  width: 30px; /* Linha encurta quando o menu fecha */
+  margin: 10px auto;
+  margin-bottom: -20px;
 }
