@@ -3,13 +3,13 @@ import styles from "./Sidebar.module.css";
 import logoicon from "../../assets/logoicon.svg";
 import logotext from "../../assets/logotext.svg";
 import togglesidebar from "../../assets/sidebar.svg";
-import VisaoGeral from "../BotaoVisaoGeral/BotaoVisaoGeral";
-import PlanejamentoSafra from "../BotaoPlanejamentoSafra/BotaoPlanejamentoSafra";
-import AreaPlantio from "../BotaoAreaPlantio/BotaoAreaPlantio";
-import Orcamentos from "../BotaoOrcamentos/BotaoOrcamentos";
-import Monitoramento from "../BotaoMonitoramento/BotaoMonitoramento";
-import Configuracoes from "../BotaoConfiguracoes/BotaoConfiguracoes";
-import Sair from "../BotaoSair/BotaoSair";
+import VisaoGeral from "../icons/BotaoVisaoGeral/BotaoVisaoGeral";
+import PlanejamentoSafra from "../icons/BotaoPlanejamentoSafra/BotaoPlanejamentoSafra";
+import AreaPlantio from "../icons/BotaoAreaPlantio/BotaoAreaPlantio";
+import Orcamentos from "../icons/BotaoOrcamentos/BotaoOrcamentos";
+import Monitoramento from "../icons/BotaoMonitoramento/BotaoMonitoramento";
+import Configuracoes from "../icons/BotaoConfiguracoes/BotaoConfiguracoes";
+import Sair from "../icons/BotaoSair/BotaoSair";
 
 export default function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);

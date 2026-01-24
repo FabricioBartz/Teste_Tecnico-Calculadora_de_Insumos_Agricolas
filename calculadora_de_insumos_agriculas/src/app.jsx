@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Plantio from "./pages/Plantio/Plantio";
+import PlanejamentoSafra from "./pages/Planejamento/Planejamento";
 import Dashboard from "./pages/Dashboard/Dashboard"; 
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -19,9 +19,9 @@ function App() {
             <Routes>
               {/* Rota da Visão Geral com o aviso de construção */}
               <Route path="/visao-geral" element={<VisaoGeral />} />
-              
-              {/* Rota principal (Plantio) */}
-              <Route path="/" element={<Plantio />} />
+
+              {/* Rota principal (Planejamento de Safra) */}
+              <Route path="/" element={<PlanejamentoSafra />} />
               
               {/* Rota do Dashboard */}
               <Route path="/dashboard" element={<Dashboard />} />

@@ -1,11 +1,11 @@
-import styles from './Plantio.module.css';
+import styles from './Planejamento.module.css';
 import { useState } from "react";
 import InputArea from "../../components/InputArea/InputArea.jsx";
 import SelectCultura from "../../components/SelectCultura/SelectCultura.jsx";
-import BotaoCalcular from "../../components/BotaoCalcular/BotaoCalcular.jsx";
-import Resultado from "../../components/Resultado/Resultado.jsx";
+import BotaoCalcular from "../../components/icons/BotaoCalcular/BotaoCalcular.jsx";
+import CardResultado from "../../components/CardResultado/CardResultado.jsx";
 
-function Plantio() {
+function PlanejamentoSafra() {
   const [area, setArea] = useState("");
   const [cultura, setCultura] = useState("");
   const [dadosCalculados, setDadosCalculados] = useState(null);
@@ -34,19 +34,19 @@ function Plantio() {
     <div className={styles.container}>
       <form onSubmit={calcularSafra}>
         <h1>Planejamento de Safra</h1>
-        <InputArea area={area} setArea={setArea} />
+        <InputArea value={area} onChange={setArea} />
         <SelectCultura
           culturaSelecionada={cultura}
           setCulturaSelecionada={setCultura}
         />
-        <BotaoCalcular texto="Calcular" />
+        <BotaoCalcular onClick={calcularSafra} />
       </form>
       <div className={styles.resultado}>
         <h3>Resultado:</h3>
-        <Resultado dados={dadosCalculados} />
+        <CardResultado dados={dadosCalculados} />
       </div>
     </div>
   );
 }
 
-export default Plantio;
+export default PlanejamentoSafra;

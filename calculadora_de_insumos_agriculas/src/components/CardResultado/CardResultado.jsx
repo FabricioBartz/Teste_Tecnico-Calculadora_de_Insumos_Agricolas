@@ -1,5 +1,5 @@
 // função para exibir o resultado
-import styles from './Resultado.module.css';
+import styles from './CardResultado.module.css';
 
 export default function Resultado({ dados }) {
   return (

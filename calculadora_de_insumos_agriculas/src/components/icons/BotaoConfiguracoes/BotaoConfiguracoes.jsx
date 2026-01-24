@@ -1,6 +1,6 @@
 import styles from "./BotaoConfiguracoes.module.css";
-import configuracoes from "../../assets/configuracoes.svg";
-import configuracoes_active from "../../assets/configuracoes_active.svg";
+import configuracoes from "../../../assets/configuracoes.svg";
+import configuracoes_active from "../../../assets/configuracoes_active.svg";
 
 export default function Configuracoes({ isActive, isCollapsed }) {
   return (

@@ -1,13 +1,17 @@
 //função para inserir a área em hectares
+import styles from "./InputArea.module.css";
 
-export default function InputArea({ area, setArea }) { 
+export default function InputArea({ label, value, onChange }) { 
   return (
-    <input
-      placeholder="Área (ha)"
-      name="Área"
-      type="number"
-      value={area}
-      onChange={(e) => setArea(e.target.value)}
-    />
+    <div className={styles.container}>
+      <label className={styles.label}>{label}</label> {/* Texto Semibold */}
+      <input
+        className={styles.input}               /* Altura de 48px e estilo */
+        placeholder="Hectares (ha)"
+        type="number"
+        value={value}                          /* O seu 'area' antigo */
+        onChange={(e) => onChange(e.target.value)} /* O seu 'setArea' antigo */
+      />
+    </div>
   );
 }

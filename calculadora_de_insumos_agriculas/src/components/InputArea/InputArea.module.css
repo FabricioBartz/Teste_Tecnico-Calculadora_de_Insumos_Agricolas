@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.input {
+  width: 406px;
+  height: 56px;
+  padding: 0 16px;
+  border: 1px solid #d0ccbf;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+
+  /* Tipo de fonte */
+  font-family:
+    "Work Sans", sans-serif; /* Substitua pelo nome real da sua Font 1 [cite: 2025-11-19] */
+  font-weight: 400; 
+  font-size: 16px; 
+  line-height: 1.4; 
+  letter-spacing: 0;
+  
+}
+
+.input:focus {
+  outline: none;
+  border-color: #789326; /* Cor de borda ao passar o mouse */
+
+}
+
+.input:hover {
+  border-color: #B1A88E; /* Cor de borda ao passar o mouse */
+
+}

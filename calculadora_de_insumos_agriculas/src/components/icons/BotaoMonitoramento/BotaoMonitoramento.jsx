@@ -1,6 +1,6 @@
 import styles from "./BotaoMonitoramento.module.css";
-import orcamentos from "../../assets/monitoramento.svg";
-import orcamentos_active from "../../assets/monitoramento_active.svg";
+import monitoramento from "../../../assets/monitoramento.svg";
+import monitoramento_active from "../../../assets/monitoramento_active.svg";
 
 export default function Monitoramento({ isActive, isCollapsed }) {
   return (
@@ -12,8 +12,8 @@ export default function Monitoramento({ isActive, isCollapsed }) {
     `}
     >
       <img
-        src={isActive ? monitoramento_active : orcamentos}
-        alt="Área de Plantio"
+        src={isActive ? monitoramento_active : monitoramento}
+        alt="Monitoramento"
         className={styles.icon}
       />
 

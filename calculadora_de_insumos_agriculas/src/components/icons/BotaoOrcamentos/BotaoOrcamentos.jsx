@@ -1,6 +1,6 @@
 import styles from "./BotaoOrcamentos.module.css";
-import orcamentos from "../../assets/orcamentos.svg";
-import orcamentos_active from "../../assets/orcamentos_active.svg";
+import orcamentos from "../../../assets/orcamentos.svg";
+import orcamentos_active from "../../../assets/orcamentos_active.svg";
 
 export default function Orcamentos({ isActive, isCollapsed }) {
   return (

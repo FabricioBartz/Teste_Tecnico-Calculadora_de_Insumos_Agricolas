@@ -1,6 +1,6 @@
 import styles from "./BotaoAreaPlantio.module.css";
-import areaplantio from "../../assets/areaplantio.svg";
-import areaplantio_active from "../../assets/areaplantio_active.svg";
+import areaplantio from "../../../assets/areaplantio.svg";
+import areaplantio_active from "../../../assets/areaplantio_active.svg";
 
 export default function AreaPlantio({ isActive, isCollapsed }) {
   return (

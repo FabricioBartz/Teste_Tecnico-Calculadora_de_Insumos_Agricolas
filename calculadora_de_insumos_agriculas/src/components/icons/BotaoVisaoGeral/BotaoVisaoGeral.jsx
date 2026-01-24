@@ -1,6 +1,6 @@
 import styles from './BotaoVisaoGeral.module.css';
-import visaogeral from '../../assets/visaogeral.svg';
-import visaogeral_active from '../../assets/visaogeral_active.svg';
+import visaogeral from '../../../assets/visaogeral.svg';
+import visaogeral_active from '../../../assets/visaogeral_active.svg';
 
 export default function VisaoGeral({ isActive, isCollapsed }) {
   return (

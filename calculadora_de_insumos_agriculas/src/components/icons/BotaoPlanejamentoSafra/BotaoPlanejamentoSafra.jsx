@@ -1,6 +1,6 @@
 import styles from "./BotaoPlanejamentoSafra.module.css";
-import planejamentosafra from "../../assets/planejamentosafra.svg";
-import planejamentosafra_active from "../../assets/planejamentosafra_active.svg";
+import planejamentosafra from "../../../assets/planejamentosafra.svg";
+import planejamentosafra_active from "../../../assets/planejamentosafra_active.svg";
 
 export default function PlanejamentoSafra({ isActive, isCollapsed }) {
   return (

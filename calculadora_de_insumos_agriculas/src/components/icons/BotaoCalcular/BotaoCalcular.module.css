@@ -1,0 +1,27 @@
+.botao {
+  width: 142px; /* Largura fixa baseada no Figma [cite: 2025-11-19] */
+  height: 56px;
+  background-color: #c48208; /* O laranja/mostarda do AgroHub [cite: 2025-11-19] */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px; /* Arredondamento conforme o Figma [cite: 2025-11-19] */
+  padding: 12px 24px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+  width: fit-content; /* Ocupa apenas o tamanho do texto [cite: 2025-11-19] */
+  min-width: 120px;
+}
+
+.botao:hover {
+  background-color: #e6a327; /* Um pouco mais escuro ao passar o mouse [cite: 2025-11-19] */
+}
+
+.botao:active {
+  background-color: #8f6009;
+  transform: scale(0.98); /* Efeito de clique físico [cite: 2025-11-19] */
+}

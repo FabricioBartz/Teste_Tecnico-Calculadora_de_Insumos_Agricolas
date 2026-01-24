@@ -1,5 +1,5 @@
 import styles from "./BotaoLogin.module.css";
-import botaologin from "../../assets/botaologin.svg";
+import botaologin from "../../../assets/botaologin.svg";
 
 export default function BotaoLogin() {
   return (

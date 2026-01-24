@@ -1,6 +1,6 @@
 import styles from "./Header.module.css";
-import BotaoLogin from "../BotaoLogin/BotaoLogin";
-import BotaoNotificacao from "../BotaoNotificacao/BotaoNotificacao";
+import BotaoLogin from "../icons/BotaoLogin/BotaoLogin";
+import BotaoNotificacao from "../icons/BotaoNotificacao/BotaoNotificacao";
 
 export default function Header() {
   return (

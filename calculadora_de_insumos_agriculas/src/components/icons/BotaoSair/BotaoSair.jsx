@@ -1,6 +1,6 @@
 import styles from "./BotaoSair.module.css";
-import sair from "../../assets/sair.svg";
-import sair_active from "../../assets/sair_active.svg";
+import sair from "../../../assets/sair.svg";
+import sair_active from "../../../assets/sair_active.svg";
 
 export default function Sair({ isActive, isCollapsed }) {
   return (

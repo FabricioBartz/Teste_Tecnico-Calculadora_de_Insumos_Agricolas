@@ -1,5 +1,5 @@
 import styles from "./BotaoNotificacao.module.css";
-import notificacao from "../../assets/notificacao.svg";
+import notificacao from "../../../assets/notificacao.svg";
 
 export default function BotaoNotificacao() {
   return (

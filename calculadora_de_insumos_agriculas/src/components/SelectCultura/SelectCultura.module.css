@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; 
+  width: 100%;
+}
+
+
+.selectWrapper {
+  position: relative; /* Base para posicionar a seta absoluta [cite: 2025-11-19] */
+  width: 100%;
+}
+
+.select {
+  width: 406px;
+  height: 56px; /* Mesma altura do input de área para alinhar o layout [cite: 2025-11-19] */
+  padding: 0 16px;
+  border: 1px solid #d0ccbf;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #ffffff;
+  cursor: pointer;
+  
+  /* Remove a seta padrão do sistema (Windows/Mac) */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
+   /* Tipo de fonte */
+  font-family:
+    "Work Sans", sans-serif; /* Substitua pelo nome real da sua Font 1 [cite: 2025-11-19] */
+  font-weight: 400; 
+  font-size: 16px; 
+  line-height: 1.4; 
+  letter-spacing: 0;
+}
+
+.select:hover {
+  border-color: #B1A88E; /* Cor de borda ao passar o mouse */
+}
+
+.select:focus {
+  outline: none;
+  border-color: #789326; /* Cor de borda ao clicar */
+}
+
+
+
+/* Criando a seta personalizada à direita */
+.selectWrapper::after {
+  content: ""; 
+  background-image: url('../../assets/icons/select.svg'); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  font-size: 10px;
+  color: #666;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Garante que o clique ignore a seta e abra o select */
+}
+
+/* Estilo de seleção (mesma lógica do seu Input) */
+.select:focus {
+  outline: none;
+  border-color: #789326; /* Verde do AgroHub ao clicar [cite: 2025-11-19] */
+}
