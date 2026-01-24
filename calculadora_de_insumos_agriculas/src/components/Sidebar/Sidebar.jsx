@@ -3,19 +3,17 @@ import styles from "./Sidebar.module.css";
 import logoicon from "../../assets/logoicon.svg";
 import logotext from "../../assets/logotext.svg";
 import togglesidebar from "../../assets/sidebar.svg";
-import VisaoGeral from "../VisaoGeral/VisaoGeral";
+import VisaoGeral from "../BotaoVisaoGeral/BotaoVisaoGeral";
 
 export default function Sidebar() {
-  // Estado que controla se a barra está aberta (true) ou fechada (false)
   const [isCollapsed, setIsCollapsed] = useState(false);
+  // Estado para controlar qual item do menu está selecionado
+  const [activeItem, setActiveItem] = useState("visao-geral");
 
-  // Função para inverter o estado do sidebar
   const toggleSidebar = () => setIsCollapsed(!isCollapsed);
 
   return (
-    <aside
-      className={`${styles.sidebar} ${isCollapsed ? styles.collapsed : ""}`}
-    >
+    <aside className={`${styles.sidebar} ${isCollapsed ? styles.collapsed : ""}`}>
       <div className={styles.logoContainer}>
         <div className={styles.logoWrapper}>
           <img src={logoicon} alt="AgroHub" />
@@ -26,18 +24,17 @@ export default function Sidebar() {
           )}
         </div>
 
-        {/* botão abrir e fechar sidebar */}
         <button onClick={toggleSidebar} className={styles.toggleBtn}>
           <img src={togglesidebar} alt="Alternar Menu" />
         </button>
       </div>
 
       <nav className={styles.menu}>
-        <VisaoGeral
-          isCollapsed={isCollapsed}
+        {/* Passamos isCollapsed para esconder o texto e isActive para trocar o ícone */}
+        <VisaoGeral 
+          isCollapsed={isCollapsed} 
           
         />
-        
       </nav>
     </aside>
   );

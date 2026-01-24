@@ -1,0 +1,42 @@
+.container {
+  /* Deixa espaço para a sidebar (240px aberta) */
+  margin-left: 240px; 
+  padding: 40px;
+  min-height: 100vh;
+  background-color: #F5F3EE; /* Cor de fundo do Figma */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: margin-left 0.3s ease;
+}
+
+/* Se a sidebar estiver fechada, a margem diminui */
+.container.collapsed {
+  margin-left: 50px;
+}
+
+.warningCard {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+  border: 1px solid #789326;
+}
+
+.icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 24px;
+}
+
+p {
+  color: #666;
+  line-height: 1.6;
+}

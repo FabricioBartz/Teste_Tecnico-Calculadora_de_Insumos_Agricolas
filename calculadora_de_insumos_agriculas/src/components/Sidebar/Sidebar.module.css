@@ -1,18 +1,13 @@
 .sidebar {
   width: 240px;
   height: 100vh;
-  background-color: #7a8d32; /* Verde Oliva do seu Figma */
+  background-color: #789326; 
   display: flex;
   flex-direction: column;
   transition: width 0.3s ease; /* Faz o efeito de "deslizar" ao fechar */
   color: #F5F3EE;
   overflow: hidden;
   
-}
-
-.collapsed {
-  
-  width: 50px; /* Largura para o modo apenas ícones */
 }
 
 .logoContainer {
@@ -48,6 +43,9 @@
 }
 
 /* ESTADO: SIDEBAR RECOLHIDA (Collapsed) */
+.collapsed {
+  width: 50px; 
+}
 /* Quando o mouse passa por cima do logo, torna o botao do side visivel */
 .logoContainer:hover .toggleBtn {
   opacity: 1;
@@ -64,9 +62,18 @@
 .collapsed .toggleBtn {
   opacity: 0;
   pointer-events: none;
-  background-color: #6B8718;
-  border-radius: 8px;
   position: absolute;
+  width: 40px;           
+  height: 48px;         
+  background-color: #6B8718; 
+  border-radius: 8px;    
+
+  /* centralização dos ícones */
+  display: flex;
+  align-items: center;   
+  justify-content: center; 
+  padding: 0;           
+  box-sizing: border-box; 
 }
 
 /* Faz o ícone do AgroHub sumir */
@@ -75,14 +82,21 @@
 }
 
 
+/* Estilização do Menu de Navegação */
 .menu {
   display: flex;
   flex-direction: column;
-  /* 1. Alinhamento: use 'flex-start' para alinhar à esquerda no modo aberto */
-  align-items: flex-start; 
-  /* 2. O Controle da Distância: */
-  margin-top: 42px; /* Ajuste este valor para definir o espaço exato após o logo */
-  gap: 8px; 
-  flex: 1; 
-  width: 100%;
+  align-items: flex-start; /* Alinha à esquerda no modo aberto */
+  margin-top: 40px;
+  gap: 8px;
+  padding: 0 8px; /* Respiro lateral para os itens não colarem na borda */
+  flex: 1;
+}
+
+/* Ajuste do menu quando a sidebar está colapsada */
+.collapsed .menu {
+  align-items: center;
+  margin-top: 40px; 
+  gap: 8px;/* Centraliza todos os itens (VisaoGeral, etc) */
+  padding: 0px;
 }
