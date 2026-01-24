@@ -16,6 +16,8 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
+  height: 70px; 
+  box-sizing: border-box;
 }
 
 .logoWrapper {
@@ -86,16 +88,16 @@
 .menu {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinha à esquerda no modo aberto */
+  align-items: center; /* Alinha à esquerda no modo aberto */
   margin-top: 40px;
   gap: 4px; /* Espaçamento entre os itens */
   padding: 0 8px; /* Respiro lateral para os itens não colarem na borda */
   flex: 1;
+  transition: padding 0.3s ease;
 }
 
 /* Ajuste do menu quando a sidebar está colapsada */
 .collapsed .menu {
-  align-items: center;
   margin-top: 40px; 
   gap: 4px;/* Espaçamento entre os itens */
   padding: 0px;
@@ -117,10 +119,12 @@
   width: calc(100% - 16px);
   margin: 8px 8px;       /* Diminui a distância do Monitoramento (topo) */
   margin-bottom: -20px;
+  transition: all 0.3s ease;
 }
 
 .collapsed .divider {
   width: 30px; /* Linha encurta quando o menu fecha */
   margin: 10px auto;
   margin-bottom: -20px;
+  transition: all 0.3s ease;
 }
