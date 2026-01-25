@@ -3,7 +3,7 @@ import styles from "./BotaoCalcular.module.css";
 
 export default function BotaoCalcular({ onClick, children = "Calcular" }) {
   return (
-    <button className={styles.botao} onClick={onClick} type="button">
+    <button className={styles.botao} onClick={onClick} type="submit">
       {children}
     </button>
   );
