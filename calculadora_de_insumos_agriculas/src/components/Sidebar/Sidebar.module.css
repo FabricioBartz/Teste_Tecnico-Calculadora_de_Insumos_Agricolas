@@ -132,7 +132,8 @@
 .menu > button,
 .menu > div {
   justify-content: flex-start !important;
-  padding-left: 13px !important;
+  margin-left: 8px !important;
+  padding-left: 5px !important;
   width: 100% !important;
   width: 224px !important;
 }
@@ -140,8 +141,14 @@
 /* Ajuste do menu quando a sidebar está colapsada */
 .collapsed .menu > button,
 .collapsed .menu > div {
-  max-width: 50px !important;
-  padding-left: 13px !important;
+  width: 40px !important;
+  height: 48px !important;
+  max-width: 40px !important;
   justify-content: flex-start !important;
-  margin: 0 !important;
+  margin-left: 5px !important;
+  padding-left: 8px !important;
+ border-radius: 8px !important;
 }
+
+  
+  
