@@ -4,6 +4,7 @@
   background-color: #c48208; /* O laranja/mostarda do AgroHub [cite: 2025-11-19] */
   color: #ffffff;
   border: none;
+  border-color:none;
   border-radius: 8px; /* Arredondamento conforme o Figma [cite: 2025-11-19] */
   padding: 12px 24px;
   font-family: "Work Sans", sans-serif;

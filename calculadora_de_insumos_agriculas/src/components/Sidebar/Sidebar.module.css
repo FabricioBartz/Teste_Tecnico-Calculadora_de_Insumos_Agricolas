@@ -11,13 +11,14 @@
 }
 
 .logoContainer {
-  padding: 20px 20px;
+  padding-left: 13px !important;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start !important;
   position: relative;
   height: 70px; /* Altura fixa para o container do logo */
   box-sizing: border-box;
+  transition: padding 0.3s ease;
 }
 
 .logoWrapper {
@@ -35,10 +36,11 @@
 
 /* botao que alterna o sidebar */
 .toggleBtn {
+  right: 10px;
+  position: absolute;
   background: none;
   border: none;
   cursor: pointer;
-  transition: opacity 0.3s ease;
   padding: 4px;
   display: flex;
   align-items: center;
@@ -56,7 +58,8 @@
 
 /* Ajuste para quando estiver colapsado (recolhido) */
 .collapsed .logoContainer {
-  justify-content: center;
+  padding-left: 13px !important;
+  justify-content: flex-start !important;
   
 }
 
@@ -76,6 +79,7 @@
   justify-content: center; 
   padding: 0;           
   box-sizing: border-box; 
+  right: 5px;
 }
 
 /* Faz o ícone do AgroHub sumir */
@@ -88,20 +92,19 @@
 .menu {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Alinha à esquerda no modo aberto */
+  align-items: flex-start;; /* Alinha à esquerda no modo aberto */
   margin-top: 40px;
   gap: 4px; /* Espaçamento entre os itens */
-  padding: 0 8px; /* Respiro lateral para os itens não colarem na borda */
+  padding: 0; /* Respiro lateral para os itens não colarem na borda */
   flex: 1;
-  transition: padding 0.3s ease;
 }
 
 /* Ajuste do menu quando a sidebar está colapsada */
 .collapsed .menu {
   margin-top: 40px; 
   gap: 4px;/* Espaçamento entre os itens */
-  padding: 0px;
-  
+  padding: 0;
+  align-items: flex-start;
 }
 
 .bottomSection {
@@ -127,4 +130,21 @@
   margin: 10px auto;
   margin-bottom: -20px;
   transition: all 0.3s ease;
+}
+
+/* todos os botões dentro do nav 'menu' */
+.menu > button, 
+.menu > div {
+  justify-content: flex-start !important; 
+  padding-left: 13px !important;
+  width: 100% !important; 
+  width: 224px !important; 
+}
+
+.collapsed .menu > button, 
+.collapsed .menu > div {
+  max-width: 50px !important;      
+  padding-left: 13px !important;
+  justify-content: flex-start !important;
+  margin: 0 !important;             
 }
