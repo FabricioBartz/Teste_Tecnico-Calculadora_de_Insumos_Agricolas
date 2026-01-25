@@ -1,0 +1,32 @@
+.card {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  box-sizing: border-box;
+}
+
+.titulo {
+  font-family: "Work Sans", sans-serif;
+  font-style: SemiBold;
+  font-weight: 600;
+  font-size: 24px;
+  color: #111111;
+  margin-bottom: 40px;
+}
+
+.formulario {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: Body Small;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.botoesContainer {
+  display: flex;
+  margin-top: 10px;
+}

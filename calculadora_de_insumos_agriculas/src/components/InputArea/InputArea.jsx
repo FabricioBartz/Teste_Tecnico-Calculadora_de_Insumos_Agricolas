@@ -4,13 +4,13 @@ import styles from "./InputArea.module.css";
 export default function InputArea({ label, value, onChange }) { 
   return (
     <div className={styles.container}>
-      <label className={styles.label}>{label}</label> {/* Texto Semibold */}
+      <label className={styles.label}>{label}</label> 
       <input
-        className={styles.input}               /* Altura de 48px e estilo */
+        className={styles.input}              
         placeholder="Hectares (ha)"
         type="number"
-        value={value}                          /* O seu 'area' antigo */
-        onChange={(e) => onChange(e.target.value)} /* O seu 'setArea' antigo */
+        value={value}                          
+        onChange={(e) => onChange(e.target.value)} 
       />
     </div>
   );

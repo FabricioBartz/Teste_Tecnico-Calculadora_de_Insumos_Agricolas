@@ -13,7 +13,7 @@
 
 .content-area {
   flex: 1;
-  background-color: #f4f7f6; /* Cor de fundo clar */
+  background-color: #ffffff; /* Cor de fundo clar */
   padding: 40px;
   overflow-y: auto; /* Permite rolar apenas o conteúdo central */
 }

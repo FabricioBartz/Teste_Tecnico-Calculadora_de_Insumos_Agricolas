@@ -1,7 +1,7 @@
 import { useState } from 'react'; 
 import styles from './SelectCultura.module.css';
 
-export default function SelectCultura({ culturaSelecionada, setCulturaSelecionada }) { 
+export default function SelectCultura({ label, culturaSelecionada, setCulturaSelecionada }) { 
   const [isOpen, setIsOpen] = useState(false); // Estado para controlar se a lista está aberta
 
   const selecionar = (valor) => {
@@ -11,7 +11,7 @@ export default function SelectCultura({ culturaSelecionada, setCulturaSelecionad
 
   return (
     <div className={styles.container}>
-      <label className={styles.label}>Cultura</label>
+      <label className={styles.label}>{label}</label>
       {/* O Wrapper controla o clique */}
       <div className={styles.selectWrapper} onClick={() => setIsOpen(!isOpen)}>
         <div className={`

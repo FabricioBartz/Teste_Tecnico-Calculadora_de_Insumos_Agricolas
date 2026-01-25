@@ -1,19 +1,71 @@
-/* estilos para o componente Resultado8*/
-
-.resultado {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #f1f8e9; /* Um verde bem clarinho */
-  border-left: 5px solid #4caf50; /* Uma barra lateral verde forte */
-  border-radius: 4px;
+/* estilos para o componente Resultado*/
+.containerResultado {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
 }
 
-.resultado p {
-  margin: 8px 0;
-  font-size: 1.1rem;
-  color: #333;
+.tituloSecao {
+  font-family: "Work Sans", sans-serif;
+  font-style: SemiBold;
+  font-weight: 600;
+  font-size: 24px;
+  color: #111111;
+  margin-bottom: 40px;
 }
 
-.resultado strong {
-  color: #2e7d32; /* Verde escuro para os números */
+.cardsWrapper {
+  width: 444px;
+  height: 142px;
+  opacity: 1;
+  gap: 32px;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardInfo {
+  background-color: #f5f3ee; /* Cinza bem clarinho da imagem */
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.headerInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #111111;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+
+}
+
+.valor {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  color: #789326;
+  margin: 0;
+}
+
+.texto {
+  font-family: Work Sans;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0.13px;
+  vertical-align: middle;
+}
+
+.icon {
+  width: 24px;  
+  height: 24px;
+  display: block; 
 }

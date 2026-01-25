@@ -1,9 +1,7 @@
 import styles from "./Planejamento.module.css";
 import { useState } from "react";
-import InputArea from "../../components/InputArea/InputArea.jsx";
-import SelectCultura from "../../components/SelectCultura/SelectCultura.jsx";
-import BotaoCalcular from "../../components/buttons/BotaoCalcular/BotaoCalcular.jsx";
 import CardResultado from "../../components/CardResultado/CardResultado.jsx";
+import CardCalculadora from "../../components/CardCalculadora/CardCalculadora.jsx";
 
 function PlanejamentoSafra() {
   const [area, setArea] = useState("");
@@ -32,24 +30,26 @@ function PlanejamentoSafra() {
     }
   };
 
-  //card principal
+  //cards
   return (
-    <div className={styles.container}>
-      <form onSubmit={calcularSafra}>
-        <h1>Planejamento de Safra</h1>
-        <InputArea value={area} onChange={setArea} />
-        <SelectCultura
-          culturaSelecionada={cultura}
-          setCulturaSelecionada={setCultura}
-        />
-        <BotaoCalcular onClick={calcularSafra} />
-      </form>
-      <div className={styles.resultado}>
-        <h3>Resultado:</h3>
-        <CardResultado dados={dadosCalculados} />
-      </div>
+  <div className={styles.containerPrincipal}>
+    
+    <div className={styles.contentWrapper}>
+      
+      <CardCalculadora 
+        area={area} 
+        setArea={setArea} 
+        cultura={cultura} 
+        setCultura={setCultura} 
+        aoCalcular={calcularSafra} 
+      />
+
+      <CardResultado dados={dadosCalculados} />
+      
     </div>
-  );
+  </div>
+);
+
 }
 
 export default PlanejamentoSafra;
