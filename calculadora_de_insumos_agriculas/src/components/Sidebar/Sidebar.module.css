@@ -1,15 +1,16 @@
+/* Estilos gerais para o sidebar */
 .sidebar {
   width: 240px;
   height: 100vh;
-  background-color: #789326; 
+  background-color: #789326;
   display: flex;
   flex-direction: column;
   transition: width 0.3s ease; /* Faz o efeito de "deslizar" ao fechar */
-  color: #F5F3EE;
+  color: #f5f3ee;
   overflow: hidden;
-  
 }
 
+/* Estilização do logo e container do logo */
 .logoContainer {
   padding-left: 13px !important;
   display: flex;
@@ -21,6 +22,7 @@
   transition: padding 0.3s ease;
 }
 
+/* Wrapper do logo e texto */
 .logoWrapper {
   display: flex;
   align-items: center;
@@ -31,7 +33,7 @@
 .logoText {
   display: flex;
   align-items: center;
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
 /* botao que alterna o sidebar */
@@ -48,7 +50,7 @@
 
 /* ESTADO: SIDEBAR RECOLHIDA (Collapsed) */
 .collapsed {
-  width: 50px; 
+  width: 50px;
 }
 /* Quando o mouse passa por cima do logo, torna o botao do side visivel */
 .logoContainer:hover .toggleBtn {
@@ -60,7 +62,6 @@
 .collapsed .logoContainer {
   padding-left: 13px !important;
   justify-content: flex-start !important;
-  
 }
 
 /* faz o botão flutuar sobre o logo */
@@ -68,17 +69,17 @@
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  width: 40px;           
-  height: 48px;         
-  background-color: #6B8718; 
-  border-radius: 8px;    
+  width: 40px;
+  height: 48px;
+  background-color: #6b8718;
+  border-radius: 8px;
 
   /* centralização dos ícones */
   display: flex;
-  align-items: center;   
-  justify-content: center; 
-  padding: 0;           
-  box-sizing: border-box; 
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
   right: 5px;
 }
 
@@ -87,24 +88,15 @@
   opacity: 0;
 }
 
-
 /* Estilização do Menu de Navegação */
 .menu {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;; /* Alinha à esquerda no modo aberto */
+  align-items: flex-start; /* Alinha à esquerda no modo aberto */
   margin-top: 40px;
   gap: 4px; /* Espaçamento entre os itens */
   padding: 0; /* Respiro lateral para os itens não colarem na borda */
   flex: 1;
-}
-
-/* Ajuste do menu quando a sidebar está colapsada */
-.collapsed .menu {
-  margin-top: 40px; 
-  gap: 4px;/* Espaçamento entre os itens */
-  padding: 0;
-  align-items: flex-start;
 }
 
 .bottomSection {
@@ -112,39 +104,44 @@
   flex-direction: column;
   padding: 0 0px;
   padding-bottom: 42px;
-  gap:4px;
+  gap: 4px;
 }
 
 /* A linha horizontal do menu */
 .divider {
   border: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Linha sutil e clara */
-  width: calc(100% - 16px);
-  margin: 8px 8px;       /* Diminui a distância do Monitoramento (topo) */
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-left: 13px !important;
+  margin-right: 13px !important;
+  margin-top: 8px;
   margin-bottom: -20px;
+  width: calc(100% - 26px);
   transition: all 0.3s ease;
 }
 
+/* Ajuste da linha horizontal quando a sidebar está colapsada */
 .collapsed .divider {
-  width: 30px; /* Linha encurta quando o menu fecha */
-  margin: 10px auto;
+  margin-left: 13px !important;
+  margin-right: 13px !important;
+  width: 24px !important;
+  margin-top: 10px;
   margin-bottom: -20px;
-  transition: all 0.3s ease;
 }
 
 /* todos os botões dentro do nav 'menu' */
-.menu > button, 
+.menu > button,
 .menu > div {
-  justify-content: flex-start !important; 
+  justify-content: flex-start !important;
   padding-left: 13px !important;
-  width: 100% !important; 
-  width: 224px !important; 
+  width: 100% !important;
+  width: 224px !important;
 }
 
-.collapsed .menu > button, 
+/* Ajuste do menu quando a sidebar está colapsada */
+.collapsed .menu > button,
 .collapsed .menu > div {
-  max-width: 50px !important;      
+  max-width: 50px !important;
   padding-left: 13px !important;
   justify-content: flex-start !important;
-  margin: 0 !important;             
+  margin: 0 !important;
 }

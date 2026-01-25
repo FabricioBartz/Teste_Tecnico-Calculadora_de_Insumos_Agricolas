@@ -22,7 +22,7 @@ export default function Sidebar() {
     <aside
       className={`${styles.sidebar} ${isCollapsed ? styles.collapsed : ""}`}
     >
-      <div className={styles.logoContainer}>
+      <div className={styles.logoContainer}> 
         <div className={styles.logoWrapper}>
           <img src={logoicon} alt="AgroHub" />
           {!isCollapsed && (
