@@ -8,7 +8,7 @@ export default function Header() {
 
   const titulos = {
     "/": "Planejamento de Safra",
-    "/planejamento-safra": "Planejamento de Safra",
+    "/planejamento-safra": "Planejamento Safra",
     "/visao-geral": "Visão Geral",
     "/monitoramento": "Monitoramento", 
     "/area-plantio": "Área de Plantio",
