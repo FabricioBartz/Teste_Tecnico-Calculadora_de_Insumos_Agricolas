@@ -11,6 +11,7 @@
   background-color: transparent;
   color: #F5F3EE;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .item:hover {

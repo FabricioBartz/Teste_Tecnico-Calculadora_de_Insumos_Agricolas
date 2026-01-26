@@ -1,10 +1,12 @@
+import { NavLink } from "react-router-dom";
 import styles from "./BotaoSair.module.css";
 import sair from "../../../assets/sair.svg";
 import sair_active from "../../../assets/sair_active.svg";
 
 export default function Sair({ isActive, isCollapsed }) {
   return (
-    <div
+    <NavLink
+      to="/sair"
       className={`
       ${styles.item} 
       ${isActive ? styles.active : ""} 
@@ -20,6 +22,6 @@ export default function Sair({ isActive, isCollapsed }) {
       {!isCollapsed && (
         <span className={styles.label}>Sair</span>
       )}
-    </div>
+    </NavLink>
   );
 }

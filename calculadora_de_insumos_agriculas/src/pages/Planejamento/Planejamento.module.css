@@ -29,3 +29,14 @@
     gap: 30px;              /* Reduz o gap para não ficar muito longe no celular [cite: 2025-11-19] */
   }
 }
+
+/* Esconde a barra no Chrome, Safari e Edge */
+.containerPrincipal::-webkit-scrollbar {
+  display: none;
+}
+
+/* Esconde no Firefox e IE */
+.containerPrincipal {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

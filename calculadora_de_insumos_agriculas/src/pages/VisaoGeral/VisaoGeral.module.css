@@ -1,42 +1,58 @@
 .container {
-  /* Deixa espaço para a sidebar (240px aberta) */
-  margin-left: 240px; 
-  padding: 40px;
-  min-height: 100vh;
-  background-color: #F5F3EE; /* Cor de fundo do Figma */
+  /* Ocupa 100% da área definida pelo .content-area do Global */
+  width: 100%;
+  height: 100%;
+  
+  /* Reset de fundo */
+  background-color: #ffffff;
+  
+  /* Centralização Absoluta usando Flexbox */
+  display: flex;
+  justify-content: center; /* Centro Horizontal */
+  align-items: center;     /* Centro Vertical */
+  
+  /* Remove qualquer margem que empurre para fora da tela */
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.content {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: margin-left 0.3s ease;
-}
-
-/* Se a sidebar estiver fechada, a margem diminui */
-.container.collapsed {
-  margin-left: 50px;
+  width: 100%;
 }
 
 .warningCard {
-  background: white;
-  padding: 32px;
+  background: #ffffff;
+  padding: 40px;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  max-width: 400px;
-  border: 1px solid #789326;
+  /* Sombra leve para destaque */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid #789326; /* Cor verde do seu logo */
+  max-width: 450px;
+  width: 90%;
 }
 
 .icon {
-  font-size: 48px;
+  font-size: 50px;
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
-h1 {
-  color: #333;
-  margin-bottom: 24px;
+.warningCard h2 {
+  color: #333333;
+  font-family: 'Work Sans', sans-serif;
+  margin-bottom: 15px;
+  font-size: 24px;
 }
 
-p {
-  color: #666;
-  line-height: 1.6;
+.warningCard p {
+  color: #666666;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
 }

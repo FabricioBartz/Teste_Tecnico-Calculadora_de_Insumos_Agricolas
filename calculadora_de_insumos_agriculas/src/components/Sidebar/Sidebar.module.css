@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: flex-start !important;
   position: relative;
-  height: 70px; /* Altura fixa para o container do logo */
+  height: 56px; /* Altura fixa para o container do logo */
   box-sizing: border-box;
   transition: padding 0.3s ease;
 }
@@ -27,7 +27,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.3s ease;
 }
 
 .logoText {
@@ -129,26 +129,48 @@
 }
 
 /* todos os botões dentro do nav 'menu' */
+/* Estado Normal (Aberto) */
 .menu > button,
-.menu > div {
+.menu > div,
+.menu > a {
+  display: flex !important;
+  align-items: center !important;
   justify-content: flex-start !important;
-  margin-left: 8px !important;
-  padding-left: 5px !important;
-  width: 100% !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  
+  /* Valores fixos para o cálculo da animação */
   width: 224px !important;
-}
-
-/* Ajuste do menu quando a sidebar está colapsada */
-.collapsed .menu > button,
-.collapsed .menu > div {
-  width: 40px !important;
+  max-width: 224px !important; 
   height: 48px !important;
-  max-width: 40px !important;
-  justify-content: flex-start !important;
   margin-left: 5px !important;
   padding-left: 8px !important;
- border-radius: 8px !important;
+  border-radius: 8px !important;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  /* Transição completa */
+  transition: 
+    width 0.3s ease, 
+    max-width 0.3s ease, 
+    margin 0.3s ease, 
+    padding 0.3s ease, 
+    background-color 0.0s ease !important;
 }
 
-  
-  
+/* Estado Fechando (Collapsed) */
+.collapsed .menu > button,
+.collapsed .menu > div,
+.collapsed .menu > a {
+  width: 40px !important;
+  max-width: 40px !important;
+  margin-left: 5px !important;
+  padding-left: 8px !important;
+
+  transition: 
+    width 0.3s ease, 
+    max-width 0.3s ease, 
+    margin 0.3s ease, 
+    padding 0.3s ease, 
+    background-color 0.3s ease !important;
+}

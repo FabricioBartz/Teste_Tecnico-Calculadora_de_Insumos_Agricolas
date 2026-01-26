@@ -1,25 +1,29 @@
+import { NavLink } from "react-router-dom";
 import styles from "./BotaoPlanejamentoSafra.module.css";
 import planejamentosafra from "../../../assets/planejamentosafra.svg";
 import planejamentosafra_active from "../../../assets/planejamentosafra_active.svg";
 
-export default function PlanejamentoSafra({ isActive, isCollapsed }) {
+export default function PlanejamentoSafra({ isCollapsed }) {
   return (
-    <div
-      className={`
+    <NavLink
+      to="/planejamento-safra"
+
+      className={({ isActive }) => `
       ${styles.item} 
       ${isActive ? styles.active : ""} 
       ${isCollapsed ? styles.collapsed : ""}
     `}
     >
+      {({ isActive }) => (
+        <>
       <img
         src={isActive ? planejamentosafra_active : planejamentosafra}
         alt="Planejamento da Safra"
         className={styles.icon}
       />
-
-      {!isCollapsed && (
-        <span className={styles.label}>Planejamento Safra</span>
+      {!isCollapsed && <span className={styles.label}>Planejamento Safra</span>}
+      </>
       )}
-    </div>
+    </NavLink>
   );
 }
