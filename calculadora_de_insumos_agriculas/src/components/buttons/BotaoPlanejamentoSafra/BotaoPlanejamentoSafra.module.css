@@ -1,7 +1,7 @@
 .item {
   display: flex;
   align-items: center;
-  padding: 0px 12px; 
+  padding: 0px 12px;
   gap: 12px;
   cursor: pointer;
   border-radius: 8px; /* Arredondamento */
@@ -9,29 +9,39 @@
   height: 48px; /* Altura */
   box-sizing: border-box;
   background-color: transparent;
-  color: #F5F3EE;
+  color: #f5f3ee;
   transition: all 0.3s ease;
   text-decoration: none;
 }
 
 .item:hover {
-  background-color: #6B8718; 
+  background-color: #6b8718;
 }
 
 .active {
-  background-color: #6B8718 
+  background-color: #6b8718;
 }
 
 .label {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 400;
   line-height: 1.4;
   white-space: nowrap;
   font-size: 16px;
 }
 
-
 .item.collapsed:hover {
-  background-color: #6B8718;
+  background-color: #6b8718;
   opacity: 1;
+}
+
+/* Quanto ao estilo do texto ativo */
+.active .label {
+  color: #dfff7e; 
+  font-family: Work Sans;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
 }

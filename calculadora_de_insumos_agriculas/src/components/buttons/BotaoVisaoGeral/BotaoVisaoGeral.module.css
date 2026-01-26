@@ -38,3 +38,14 @@
   opacity: 1;
 }
 
+/* Quanto ao estilo do texto ativo */
+.active .label {
+  color: #dfff7e; 
+  font-family: Work Sans;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
