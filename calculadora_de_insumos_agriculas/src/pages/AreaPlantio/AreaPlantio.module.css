@@ -1,0 +1,58 @@
+.container {
+  /* Ocupa 100% da área definida pelo .content-area do Global */
+  width: 100%;
+  height: 100%;
+  
+  /* Reset de fundo */
+  background-color: #ffffff;
+  
+  /* Centralização Absoluta usando Flexbox */
+  display: flex;
+  justify-content: center; /* Centro Horizontal */
+  align-items: center;     /* Centro Vertical */
+  
+  /* Remove qualquer margem que empurre para fora da tela */
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.warningCard {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  /* Sombra leve para destaque */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid #789326; /* Cor verde do seu logo */
+  max-width: 450px;
+  width: 90%;
+}
+
+.icon {
+  font-size: 50px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.warningCard h2 {
+  color: #333333;
+  font-family: 'Work Sans', sans-serif;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.warningCard p {
+  color: #666666;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
