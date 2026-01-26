@@ -1,25 +1,29 @@
+import { NavLink } from "react-router-dom";
 import styles from "./BotaoMonitoramento.module.css";
 import monitoramento from "../../../assets/monitoramento.svg";
 import monitoramento_active from "../../../assets/monitoramento_active.svg";
 
-export default function Monitoramento({ isActive, isCollapsed }) {
+export default function Monitoramento({ isCollapsed }) {
   return (
-    <div
-      className={`
+    <NavLink
+      to="/monitoramento"
+      className={({ isActive }) => `
       ${styles.item} 
       ${isActive ? styles.active : ""} 
       ${isCollapsed ? styles.collapsed : ""}
     `}
     >
-      <img
-        src={isActive ? monitoramento_active : monitoramento}
-        alt="Monitoramento"
-        className={styles.icon}
-      />
+      {({ isActive }) => (
+        <>
+          <img
+            src={isActive ? monitoramento_active : monitoramento}
+            alt="Monitoramento"
+            className={styles.icon}
+          />
 
-      {!isCollapsed && (
-        <span className={styles.label}>Monitoramento</span>
+          {!isCollapsed && <span className={styles.label}>Monitoramento</span>}
+        </>
       )}
-    </div>
+    </NavLink>
   );
 }

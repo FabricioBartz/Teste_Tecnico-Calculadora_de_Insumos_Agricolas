@@ -7,6 +7,7 @@ import AreaPlantio from "./pages/AreaPlantio/AreaPlantio";
 import Monitoramento from "./pages/Monitoramento/Monitoramento";
 import Orcamentos from "./pages/Orcamentos/Orcamentos";
 import Configuracoes from "./pages/configuracoes/configuracoes";
+import Sair from "./pages/Sair/Sair";
 import "./app.css";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
               <Route path="/area-plantio" element={<AreaPlantio />} />
               <Route path="/orcamentos" element={<Orcamentos />} />
               <Route path="/configuracoes" element={<Configuracoes />} />
+              <Route path="/sair" element={<Sair />} />
 
               {/* Rota principal (Planejamento de Safra) */}
               <Route path="/" element={<Navigate to="/planejamento-safra" />} />
