@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PlanejamentoSafra from "./pages/Planejamento/Planejamento";
 import Header from "./components/Header/Header";
@@ -11,19 +12,30 @@ import Sair from "./pages/Sair/Sair";
 import "./app.css";
 
 function App() {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   return (
     <BrowserRouter>
       <div className="app-layout">
-        <Sidebar />
+        <Sidebar
+          isCollapsed={isCollapsed}
+          isMobileOpen={isMenuOpen}
+          onClose={() => setIsMenuOpen(false)} // Função para o "X"
+          onToggle={() => setIsCollapsed(!isCollapsed)} // Função para a "Seta"
+        />
 
         <div className="main-container">
-          <Header />
+          <Header onOpenMenu={() => setIsMenuOpen(true)} />
 
           <main className="content-area">
             <Routes>
               {/* Rota da Visão Geral com o aviso de construção */}
               <Route path="/visao-geral" element={<VisaoGeral />} />
-              <Route path="/planejamento-safra" element={<PlanejamentoSafra />} />
+              <Route
+                path="/planejamento-safra"
+                element={<PlanejamentoSafra />}
+              />
               <Route path="/monitoramento" element={<Monitoramento />} />
               <Route path="/area-plantio" element={<AreaPlantio />} />
               <Route path="/orcamentos" element={<Orcamentos />} />

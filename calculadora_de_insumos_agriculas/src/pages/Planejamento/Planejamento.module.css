@@ -7,6 +7,7 @@
   min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
+  min-width: 320px; /* RESOLUÇÃO MÍNIMA: impede quebra total da tela */
 }
 
 .contentWrapper {
@@ -19,6 +20,14 @@
   flex-wrap: nowrap;
   align-items: flex-start;
   
+}
+
+/* Estilo para Calculadora e Resultado diminuírem gradualmente */
+.cardCalculadora, .containerResultado {
+  flex: 1 1 358px; /* Cresce e encolhe gradualmente com base em 358px */
+  min-width: 358px; /* Não permite diminuir menos que 358px */
+  max-width: 480px; /* Limite máximo para não esticar demais no desktop */
+  transition: all 0.3s ease;
 }
 
 /* Responsividade: Empilha em telas menores (celulares) */

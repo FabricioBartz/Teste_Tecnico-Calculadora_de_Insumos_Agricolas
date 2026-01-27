@@ -8,6 +8,7 @@
   transition: width 0.3s ease; /* Faz o efeito de "deslizar" ao fechar */
   color: #f5f3ee;
   overflow: hidden;
+  flex-shrink: 0; /* IMPEDE que a sidebar mude de tamanho com o conteúdo */
 }
 
 /* Estilização do logo e container do logo */
@@ -128,6 +129,13 @@
   margin-bottom: -20px;
 }
 
+/* BOTÃO DE FECHAR (X): Escondido por padrão no Desktop */
+.closeBtnMobile {
+  display: none; 
+  background: none;
+  border: none;
+}
+
 /* todos os botões dentro do nav 'menu' */
 /* Estado Normal (Aberto) */
 .menu > button,
@@ -173,4 +181,28 @@
     margin 0.3s ease, 
     padding 0.3s ease, 
     background-color 0.3s ease !important;
+}
+
+/* --- VERSÃO MOBILE (Breakpoints) --- */
+@media (max-width: 480px) {
+  .sidebar {
+    position: fixed;
+    left: -100%; /* Escondido fora da tela */
+    z-index: 2000;
+  }
+
+  .sidebar.mobileActive {
+    left: 0 !important;
+  }
+
+  .closeBtnMobile {
+    display: flex; /* Aparece apenas na versão mobile */
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+
+  .toggleBtn {
+   display: none; /* Esconde a seta de recolher no mobile */
+  }
 }
