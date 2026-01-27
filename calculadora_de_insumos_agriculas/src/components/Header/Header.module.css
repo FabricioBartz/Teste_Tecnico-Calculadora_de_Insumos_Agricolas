@@ -1,7 +1,8 @@
 .header {
   /* Dimensões e Posicionamento */
-  height: 56px; 
-  width: 100%; 
+  height: 56px;
+  width: 100%;
+  top: 0;
 
   /* Flexbox para alinhar os itens */
   display: flex;
@@ -9,12 +10,13 @@
   align-items: center; /* Garante que os itens fiquem centralizados verticalmente */
 
   /* Espaçamentos internos */
-  padding-left: 24px;
-  padding-right: 32px;
+  padding: 0 16px; /* Padding reduzido para mobile */
 
   /* Estilo visual */
-  background-color: #F5F3EE; 
-  opacity: 1; 
+  position: sticky; /* Fixa o header no topo ao rolar */
+
+  background-color: #f5f3ee;
+  opacity: 1;
   box-sizing: border-box;
   flex-shrink: 0; /* Impede que o header seja "esmagado" pelo conteúdo */
   z-index: 1000; /* Garante que ele fique sobre o conteúdo ao rolar */
@@ -22,20 +24,55 @@
 
 /* texto */
 .pageTitle {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 600;
-  font-size: 24px; 
-  line-height: 1.2; 
+  font-size: 24px;
+  line-height: 1.2;
   letter-spacing: 0;
-  color: #111111; 
+  color: #111111;
   margin: 0;
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 
 .userActions {
   display: flex;
   align-items: center;
-  gap: 24px; 
+  gap: 24px;
   flex-shrink: 0;
+}
+
+.menuBtn {
+  display: none; /* Escondido no desktop */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Espaço entre o hambúrguer e o texto "Planejamento" */
+}
+
+@media (max-width: 768px) {
+  .menuBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-right: 8px;
+  }
+
+  .header {
+    padding: 0 12px;
+  }
+
+  .pageTitle {
+    font-size: 20px; /* Diminui levemente o título para caber no celular com o botão */
+  }
+
+  .userActions {
+    gap: 8px; 
+  }
 }

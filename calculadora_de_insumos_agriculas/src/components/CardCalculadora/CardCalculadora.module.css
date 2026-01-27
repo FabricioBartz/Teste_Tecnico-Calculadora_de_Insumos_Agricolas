@@ -1,10 +1,14 @@
 .card {
   background-color: #ffffff;
   border-radius: 16px;
-  width: 100%;
-  max-width: 480px;
   box-sizing: border-box;
   padding: 0px;
+
+  /* LARGURA GRADUAL E TRAVA */
+  flex: 1 1 358px;    /* Faz o card diminuir gradualmente até 358px */
+  min-width: 358px;  /* Trava para não quebrar o layout abaixo de 358px */
+  max-width: 480px;  /* Mantém o tamanho máximo que você definiu */
+  width: 100%;       /* Garante que ocupe o espaço disponível no mobile */
 }
 
 .titulo {
@@ -29,4 +33,15 @@
 .botoesContainer {
   display: flex;
   margin-top: 10px;
+}
+
+/* AJUSTE PARA TELAS PEQUENAS (MOBILE) */
+@media (max-width: 480px) {
+  .card {
+    /* Força o tamanho exato de 358px no mobile */
+    width: 358px !important; 
+    min-width: 358px !important;
+    max-width: 358px !important;
+    margin: 0 auto; /* Centraliza o card caso a tela do celular seja maior que 358px */
+  }
 }

@@ -5,7 +5,7 @@ export default function BotaoLogin() {
   return (
     <button className={styles.loginBtn}>
       <img src={botaologin} alt="Usuário" />
-      Fazer login
+      <span className={styles.btnText}>Fazer login</span>
     </button>
   );
 }

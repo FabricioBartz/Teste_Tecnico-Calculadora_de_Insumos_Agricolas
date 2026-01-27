@@ -1,6 +1,7 @@
 /* Botão Login */
 .loginBtn {
   width: 124px;
+  min-width: 36px;
   height: 36px;
   gap: 8px;
   opacity: 1;
@@ -28,4 +29,38 @@
 /* Feedback visual ao clicar */
 .loginBtn:active {
   background-color: #d6e0b5;
+}
+
+@media (max-width: 768px) {
+  .btnText {
+    display: none; /* Esconde o texto no mobile */
+  }
+  
+  .loginBtn {
+    border: none;         /* Remove a borda  */
+    background: none;     /* Remove o fundo  */
+    width: auto;          /* Deixa o tamanho ser definido apenas pela imagem */
+    height: auto;
+    padding: 0;           /* Remove espaços internos */
+    gap: 0;
+  }
+
+  .loginBtn img {
+    width: 24px;          /* Ajuste o tamanho do ícone dentro do círculo */
+    height: 24px;
+    display: block;       /* Remove espaços fantasmas de fontes */
+    filter: brightness(0);
+  }
+
+  /* Feedback visual ao passar o mouse */
+.loginBtn:hover {
+  background-color: #f4fae2;
+}
+
+/* Feedback visual ao clicar */
+.loginBtn:active {
+  background-color: #d6e0b5;
+}
+
+  
 }
