@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./Sidebar.module.css";
 import logoicon from "../../assets/logoicon.svg";
 import logotext from "../../assets/logotext.svg";
+import fechar from "../../assets/fechar.svg";
 import togglesidebar from "../../assets/sidebar.svg";
 import VisaoGeral from "../buttons/BotaoVisaoGeral/BotaoVisaoGeral";
 import PlanejamentoSafra from "../buttons/BotaoPlanejamentoSafra/BotaoPlanejamentoSafra";
@@ -11,17 +12,23 @@ import Monitoramento from "../buttons/BotaoMonitoramento/BotaoMonitoramento";
 import Configuracoes from "../buttons/BotaoConfiguracoes/BotaoConfiguracoes";
 import Sair from "../buttons/BotaoSair/BotaoSair";
 
-export default function Sidebar() {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+export default function Sidebar({ isCollapsed, isMobileOpen, onClose, onToggle }) {
+  
   // Estado para controlar qual item do menu está selecionado
   const [activeItem, setActiveItem] = useState("visao-geral");
 
   const toggleSidebar = () => setIsCollapsed(!isCollapsed);
 
   return (
-    <aside
-      className={`${styles.sidebar} ${isCollapsed ? styles.collapsed : ""}`}
-    >
+    <>
+      {/* Overlay para fechar ao clicar fora no mobile */}
+      {isMobileOpen && <div className={styles.overlay} onClick={onClose} />}
+    <aside className={`
+        ${styles.sidebar} 
+        ${isCollapsed ? styles.collapsed : ""} 
+        ${isMobileOpen ? styles.mobileActive : ""}
+      `}>
+    
       <div className={styles.logoContainer}> 
         <div className={styles.logoWrapper}>
           <img src={logoicon} alt="AgroHub" />
@@ -32,10 +39,16 @@ export default function Sidebar() {
           )}
         </div>
 
-        <button onClick={toggleSidebar} className={styles.toggleBtn}>
-          <img src={togglesidebar} alt="Alternar Menu" />
-        </button>
-      </div>
+        {/* Botão de Toggle (Desktop) */}
+          <button onClick={onToggle} className={styles.toggleBtn}>
+            <img src={togglesidebar} alt="Alternar" />
+          </button>
+
+          {/* Botão de Fechar (Mobile - X) */}
+          <button onClick={onClose} className={styles.closeBtnMobile}>
+            <img src={fechar} alt="Fechar" />
+          </button>
+        </div>
 
       <nav className={styles.menu}>
         {/* Botões do menu principal */}
@@ -55,5 +68,6 @@ export default function Sidebar() {
         </nav>
       </div>
     </aside>
+    </>
   );
 }

@@ -16,7 +16,8 @@
   background-color: #F5F3EE; 
   opacity: 1; 
   box-sizing: border-box;
-  z-index: 1000;
+  flex-shrink: 0; /* Impede que o header seja "esmagado" pelo conteúdo */
+  z-index: 1000; /* Garante que ele fique sobre o conteúdo ao rolar */
 }
 
 /* texto */
