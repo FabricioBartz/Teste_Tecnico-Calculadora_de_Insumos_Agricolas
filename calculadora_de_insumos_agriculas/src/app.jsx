@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PlanejamentoSafra from "./pages/Planejamento/Planejamento";
 import Header from "./components/Header/Header";
@@ -14,7 +14,34 @@ import "./app.css";
 function App() {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+  const [wasMobile, setWasMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth <= 768;
+      if (isMobile !== wasMobile) {
+        if (isMobile) {
+          // REGRA: Se reduzir para mobile e o desktop estava aberto,
+          // o menu flutuante já começa aberto.
+          if (!isCollapsed) {
+            setIsMenuOpen(true);
+          }
+        } else {
+          // REGRA: Se aumentar para desktop, fecha o estado mobile
+          // para evitar que o botão de fechar (X) fique "preso".
+          setIsMenuOpen(false);
+        }
+        setWasMobile(isMobile);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isCollapsed, wasMobile]);
+
+  // Funções de controle
+  const toggleSidebar = () => setIsCollapsed(!isCollapsed);
+  const closeMobileMenu = () => setIsMenuOpen(false);
   return (
     <BrowserRouter>
       <div className="app-layout">
