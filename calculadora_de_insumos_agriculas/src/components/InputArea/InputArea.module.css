@@ -39,3 +39,50 @@
 .input::placeholder {
   color: #9A9A9A; 
 }
+/*CSS para indicar erro*/
+/* Estado de Erro */
+.inputErro {
+  border-color: #e74c3c !important;
+  color: #e74c3c !important;
+  padding-right: 48px !important; /* Espaço para o ícone de 24px não cobrir o número */
+}
+
+/* Cor do placeholder quando o campo estiver em estado de erro */
+.inputErro::placeholder {
+  color: #e74c3c !important; /* Vermelho */
+  opacity: 1; /* Garante que o navegador não deixe o texto transparente */
+}
+
+/* Ícone de Exclamação 24x24px */
+.wrapperErro::after {
+  content: "" !important;
+  background-image: url("../../assets/aviso.svg") !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 24px !important;
+  width: 24px !important;
+  height: 24px !important;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%) !important;
+  pointer-events: none;
+}
+
+/* Animação de Tremidinha */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+.containerErro {
+  animation: shake 0.3s ease-in-out;
+}
+
+.inputWrapper {
+  position: relative; /* "prende" o ícone dentro do campo */
+  width: 100%;
+}

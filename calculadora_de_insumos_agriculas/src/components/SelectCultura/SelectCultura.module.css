@@ -112,3 +112,29 @@
 .optionItem:hover {
   background-color: #f4fae2; /* Fundo leve ao passar o mouse [cite: 2025-11-19] */
 }
+
+/* Quando há erro, forçamos a cor vermelha no texto que estiver dentro da div */
+.selectErro {
+  border-color: #e74c3c !important;
+  color: #e74c3c !important; 
+}
+
+/* Troca a imagem da seta pelo ponto de exclamação */
+.wrapperErro::after {
+  content: "" !important;
+  background-image: url("../../assets/aviso.svg") !important; 
+  width: 24px !important;
+  height: 24px !important;
+  background-size: 24px 24px !important; /* Garante que a imagem preencha o espaço sem sobrar */
+  background-repeat: no-repeat;
+  background-position: center;
+  /* Trava o ícone para não girar */
+  transform: translateY(-50%) rotate(0deg) !important;
+  /* Remove filtros de cor esverdeados/cinzas da seta original */
+  filter: none !important; 
+}
+
+/* Garante que o texto 'vazio' (placeholder) também fique vermelho se houver erro */
+.selectErro.vazio {
+  color: #e74c3c !important;
+}

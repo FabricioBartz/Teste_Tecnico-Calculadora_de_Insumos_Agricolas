@@ -10,18 +10,25 @@ export default function CardCalculadora({
   cultura,
   setCultura,
   aoCalcular,
+  erros
 }) {
   return (
     <div className={styles.card}>
       <h1 className={styles.titulo}>Informações básicas</h1>
 
       <form onSubmit={aoCalcular} className={styles.tituloformulario}>
-        <InputArea label="Área" value={area} onChange={setArea} />
+        <InputArea 
+        label="Área" 
+        value={area} 
+        onChange={setArea} 
+        erro={erros?.area}
+        />
 
         <SelectCultura
           label="Cultura"
           culturaSelecionada={cultura}
           setCulturaSelecionada={setCultura}
+          erro={erros?.cultura}
         />
 
         <div className={styles.botoesContainer}>

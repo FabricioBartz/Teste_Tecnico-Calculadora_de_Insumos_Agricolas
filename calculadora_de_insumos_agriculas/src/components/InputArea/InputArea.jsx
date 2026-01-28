@@ -1,17 +1,26 @@
 //função para inserir a área em hectares
 import styles from "./InputArea.module.css";
 
-export default function InputArea({ label, value, onChange }) { 
+export default function InputArea({ label, value, onChange, erro }) { 
   return (
     <div className={styles.container}>
-      <label className={styles.label}>{label}</label> 
-      <input
-        className={styles.input}              
-        placeholder="Hectares (ha)"
-        type="number"
-        value={value}                          
-        onChange={(e) => onChange(e.target.value)} 
-      />
+      <label className={styles.label}>{label}</label>
+      {/* Wrapper necessário para posicionar o ícone de aviso sobre o input */}
+      <div className={`${styles.inputWrapper} ${erro ? styles.wrapperErro : ""}`}>
+        <input
+          // Se houver erro, uma classe extra para a borda ficar vermelha
+          className={`${styles.input} ${erro ? styles.inputErro : ""}`}
+          placeholder={erro ? erro : "Hectares (ha)"}
+          type="number"
+          min="0"
+          value={value}
+          onChange={(e) => {
+              const val = e.target.value;
+              // trava de não negativos
+              if (val >= 0 || val === "") onChange(val);
+            }}
+          />
+        </div>
     </div>
   );
 }
