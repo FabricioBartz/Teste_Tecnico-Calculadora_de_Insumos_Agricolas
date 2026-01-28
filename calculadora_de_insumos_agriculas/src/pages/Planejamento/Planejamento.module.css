@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center; /* Centraliza o conteúdo na tela */
   align-items: flex-start;
-  padding: 40px 20px;
+  padding: 80px;
   background-color: #ffffff;
   min-height: 100vh;
   width: 100%;
@@ -16,49 +16,51 @@
   flex-direction: row; /* Coloca um ao lado do outro */
   gap: 40px;          /* Espaço entre a calculadora e o resultado */
   width: 100%;
-  max-width: 1200px;  /* Limita a largura para não espalhar demais */
+  max-width: 1000px;  /* Limita a largura para não espalhar demais */
   flex-wrap: nowrap;
   align-items: flex-start;
+  justify-content: center; /* Centraliza os dois cards no meio do espaço disponível */
+  margin: 0 auto; /* Centralização extra de segurança */
   
 }
 
 /* Estilo para Calculadora e Resultado diminuírem gradualmente */
 .cardCalculadora, .containerResultado {
-  flex: 0 0 358px; /* O primeiro 0 impede que ele cresça além da base de 358px se não houver espaço */
-  min-width: 358px; /* Não permite diminuir menos que 358px */
-  max-width: 480px; /* Limite máximo para não esticar demais no desktop */
+  display: flex;
+  flex-direction: column;
+  /* Ambos começam com 358px, podem crescer (1) e encolher (1) juntos */
+  flex: 1 1 358px; 
+  min-width: 358px;
+  max-width: 480px;
+  width: 100%;
   transition: all 0.3s ease;
 }
 
 /* Responsividade: Empilha em telas menores (celulares) */
 @media (max-width: 1100px) {
-  .containerPrincipal {
-    padding: 0px 16px; 
-  }
-  .contentWrapper {
-    flex-direction: column; /* Força o empilhamento vertical */
-    align-items: center;
-    align-items: center; /* Garante que os cards fiquem no meio da tela */
-    width: 100%;
+.contentWrapper {
+    flex-direction: column;
+    align-items: center; /* Centraliza os cards no modo empilhado */
     gap: 40px;
-    
   }
 
-  .containerPrincipal {
-    padding: 20px 0; /* Remove padding lateral para dar espaço ao card de 358px */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    height: auto; /* Garante que não esteja travado em 100vh */
-    overflow: visible;
-  }
+  .cardCalculadora, .containerResultado {
+  display: flex;
+  flex-direction: column;
+  /* Ambos começam com 358px, podem crescer (1) e encolher (1) juntos */
+  flex: 1 1 358px; 
+  min-width: 358px;
+  max-width: 480px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
 }
 
 
 /* Responsividade para Celular*/
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .containerPrincipal {
-    padding: 0px 16px; 
+    padding: 20px 16px; 
   }
   .contentWrapper {
     gap: 40px;
@@ -71,10 +73,14 @@
     overflow: visible;
   }
 
-  /* FORÇA A TRAVA DE 358PX NO MOBILE */
   .cardCalculadora, .containerResultado {
-    width: 358px !important;
-    min-width: 358px !important;
-    max-width: 358px !important;
-  }
+  display: flex;
+  flex-direction: column;
+  /* Ambos começam com 358px, podem crescer (1) e encolher (1) juntos */
+  flex: 1 1 358px; 
+  min-width: 358px;
+  max-width: 480px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
 }

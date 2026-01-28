@@ -6,7 +6,7 @@ export default function CardResultado({ dados }) {
 
   return (
     <div className={styles.containerResultado}>
-      <h2 className={styles.tituloSecao}>Resultado do Cálculo</h2>
+      <h2 className={styles.titulo}>Resultado do Cálculo</h2>
       
       <div className={styles.cardsWrapper}>
         <div className={styles.cardInfo}>

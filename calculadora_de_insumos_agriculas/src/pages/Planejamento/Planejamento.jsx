@@ -32,24 +32,23 @@ function PlanejamentoSafra() {
 
   //cards
   return (
-  <div className={styles.containerPrincipal}>
-    
-    <div className={styles.contentWrapper}>
-      
-      <CardCalculadora 
-        area={area} 
-        setArea={setArea} 
-        cultura={cultura} 
-        setCultura={setCultura} 
-        aoCalcular={calcularSafra} 
-      />
-
-      <CardResultado dados={dadosCalculados} />
-      
+    <div className={styles.containerPrincipal}>
+      <div className={styles.contentWrapper}>
+        <div className={styles.cardCalculadora}>
+          <CardCalculadora
+            area={area}
+            setArea={setArea}
+            cultura={cultura}
+            setCultura={setCultura}
+            aoCalcular={calcularSafra}
+          />
+        </div>
+        <div className={styles.containerResultado}>
+          <CardResultado dados={dadosCalculados} />
+        </div>
+      </div>
     </div>
-  </div>
-);
-
+  );
 }
 
 export default PlanejamentoSafra;

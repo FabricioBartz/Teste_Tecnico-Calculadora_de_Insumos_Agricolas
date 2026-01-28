@@ -3,24 +3,22 @@
   border-radius: 16px;
   box-sizing: border-box;
   padding: 0px;
+  width: 100%;
 
-  /* LARGURA GRADUAL E TRAVA */
-  flex: 1 1 358px;    /* Faz o card diminuir gradualmente até 358px */
-  min-width: 358px;  /* Trava para não quebrar o layout abaixo de 358px */
-  max-width: 480px;  /* Mantém o tamanho máximo que você definiu */
-  width: 100%;       /* Garante que ocupe o espaço disponível no mobile */
+     
 }
 
 .titulo {
   font-family: "Work Sans", sans-serif;
   font-style: SemiBold;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 20px;
   color: #111111;
   margin-bottom: 40px;
 }
 
-.formulario {
+/* titulo do formulario do CardCalculadora */
+.tituloformulario {
   font-family: "Work Sans", sans-serif;
   font-weight: 600;
   font-style: SemiBold;
@@ -35,13 +33,3 @@
   margin-top: 10px;
 }
 
-/* AJUSTE PARA TELAS PEQUENAS (MOBILE) */
-@media (max-width: 480px) {
-  .card {
-    /* Força o tamanho exato de 358px no mobile */
-    width: 358px !important; 
-    min-width: 358px !important;
-    max-width: 358px !important;
-    margin: 0 auto; /* Centraliza o card caso a tela do celular seja maior que 358px */
-  }
-}

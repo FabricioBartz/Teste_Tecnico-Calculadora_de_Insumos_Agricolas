@@ -4,17 +4,15 @@
   flex-direction: column;
   gap: 20px;
   width: 100%;
-  max-width: 480px;
 }
 
-.tituloSecao {
+.titulo {
   font-family: "Work Sans", sans-serif;
   font-style: SemiBold;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 20px;
   color: #111111;
   padding-bottom: 20px;
-  
 }
 
 .cardsWrapper {
@@ -25,15 +23,18 @@
 }
 
 .cardInfo {
-  background-color: #f5f3ee; /* Cinza bem clarinho da imagem */
+  background-color: #f5f3ee;
   padding: 24px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 444px;
-  height: 142px;
-  gap: 30px;
+
+  /* MUDANÇA: Use 100% para ele se ajustar aos 358px do pai */
+  width: 100% !important;
+  max-width: 100%;
+  height: auto;
+  min-height: 142px;
+  box-sizing: border-box;
 }
 
 .headerInfo {
@@ -43,7 +44,7 @@
   color: #111111;
   font-family: "Work Sans", sans-serif;
   font-weight: 600;
-  font-size: 14px;;
+  font-size: 14px;
   box-sizing: border-box;
 }
 
@@ -53,7 +54,6 @@
   font-size: 32px;
   color: #789326;
   margin: 0;
-  
 }
 
 .texto {
@@ -67,7 +67,18 @@
 }
 
 .icon {
-  width: 24px;  
+  width: 24px;
   height: 24px;
-  display: block; 
+  display: block;
+}
+
+/* AJUSTE PARA TELAS PEQUENAS (MOBILE) */
+@media (max-width: 768px) {
+  .card {
+    /* Força o tamanho exato de 358px no mobile */
+    width: 358px !important; 
+    min-width: 358px !important;
+    max-width: 358px !important;
+    margin: 0 auto; /* Centraliza o card caso a tela do celular seja maior que 358px */
+  }
 }

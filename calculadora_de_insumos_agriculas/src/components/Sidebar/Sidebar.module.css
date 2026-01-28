@@ -188,7 +188,7 @@
   .sidebar {
     position: fixed !important; /* Garante que saia do fluxo do desktop */
     top: 0;
-    width: 280px !important;    /* FORÇA a largura total no mobile */
+    width: 240px !important;    /* FORÇA a largura total no mobile */
     left: -100%; /* Escondido fora da tela */
     z-index: 2000;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
@@ -228,10 +228,18 @@
   .sidebar.mobileActive .menu > button,
   .sidebar.mobileActive .menu > div,
   .sidebar.mobileActive .menu > a {
-    width: 250px !important;
-    max-width: 250px !important;
-    margin-left: 15px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    
+    width: 224px !important;       /* Largura exata do desktop aberto */
+    max-width: 224px !important;   /* Trava a largura */
+    height: 48px !important;
+    margin-left: 5px !important;    /* Alinhamento lateral idêntico */
+    padding-left: 8px !important;   /* Padding interno para o ícone */
+    border-radius: 8px !important;
     opacity: 1 !important;
+    visibility: visible !important;
   }
   /* Garante que o texto dentro dos botões (BotaoVisaoGeral, etc) fique visível */
   .sidebar.mobileActive span, 
@@ -239,4 +247,7 @@
     display: inline-block !important;
     opacity: 1 !important;
   }
+
+  
+
 }

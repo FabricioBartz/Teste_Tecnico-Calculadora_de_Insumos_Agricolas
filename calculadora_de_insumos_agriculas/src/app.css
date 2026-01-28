@@ -30,7 +30,7 @@
 .content-area {
   flex: 1;
   background-color: #ffffff; /* Cor de fundo clar */
-  padding: 40px;
+  flex-direction: column;
   overflow: visible;
   display: flex; /* Ajuda a centralizar o que estiver dentro */
 }

@@ -16,8 +16,8 @@ export default function Sidebar({ isCollapsed, isMobileOpen, onClose, onToggle }
   
   // Estado para controlar qual item do menu está selecionado
   const [activeItem, setActiveItem] = useState("visao-geral");
-
-  const toggleSidebar = () => setIsCollapsed(!isCollapsed);
+  
+  const effectivelyCollapsed = isCollapsed && !isMobileOpen;
 
   return (
     <>
@@ -33,7 +33,7 @@ export default function Sidebar({ isCollapsed, isMobileOpen, onClose, onToggle }
       <div className={styles.logoContainer}> 
         <div className={styles.logoWrapper}>
           <img src={logoicon} alt="AgroHub" />
-          {!isCollapsed && (
+          {!effectivelyCollapsed && (
             <span>
               <img src={logotext} alt="AgroHub" className={styles.logoText} />
             </span>
@@ -53,19 +53,19 @@ export default function Sidebar({ isCollapsed, isMobileOpen, onClose, onToggle }
 
       <nav className={styles.menu}>
         {/* Botões do menu principal */}
-        <VisaoGeral isCollapsed={isCollapsed} />
-        <AreaPlantio isCollapsed={isCollapsed} />
-        <Orcamentos isCollapsed={isCollapsed} />
-        <PlanejamentoSafra isCollapsed={isCollapsed} />
-        <Monitoramento isCollapsed={isCollapsed} />
+        <VisaoGeral isCollapsed={effectivelyCollapsed}/>
+        <AreaPlantio isCollapsed={effectivelyCollapsed} />
+        <Orcamentos isCollapsed={effectivelyCollapsed} />
+        <PlanejamentoSafra isCollapsed={effectivelyCollapsed} />
+        <Monitoramento isCollapsed={effectivelyCollapsed} />
       </nav>
 
       <div className={styles.bottomSection}>
         <hr className={styles.divider} />
         <nav className={styles.menu}>
           {/* Botões de configurações e sair */}
-          <Configuracoes isCollapsed={isCollapsed} />
-          <Sair isCollapsed={isCollapsed} />
+          <Configuracoes isCollapsed={effectivelyCollapsed} />
+          <Sair isCollapsed={effectivelyCollapsed} />
         </nav>
       </div>
     </aside>
