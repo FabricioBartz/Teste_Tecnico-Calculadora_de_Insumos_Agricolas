@@ -25,7 +25,8 @@ export default function Sidebar({ isCollapsed, isMobileOpen, onClose, onToggle }
       {isMobileOpen && <div className={styles.overlay} onClick={onClose} />}
     <aside className={`
         ${styles.sidebar} 
-        ${isCollapsed ? styles.collapsed : ""} 
+        /* SÓ aplica 'collapsed' se NÃO for mobile open */
+        ${isCollapsed && !isMobileOpen ? styles.collapsed : ""} 
         ${isMobileOpen ? styles.mobileActive : ""}
       `}>
     

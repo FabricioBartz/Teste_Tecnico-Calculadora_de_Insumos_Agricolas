@@ -131,7 +131,7 @@
 
 /* BOTÃO DE FECHAR (X): Escondido por padrão no Desktop */
 .closeBtnMobile {
-  display: none; 
+  display: none;
   background: none;
   border: none;
 }
@@ -146,10 +146,10 @@
   justify-content: flex-start !important;
   text-decoration: none !important;
   color: inherit !important;
-  
+
   /* Valores fixos para o cálculo da animação */
   width: 224px !important;
-  max-width: 224px !important; 
+  max-width: 224px !important;
   height: 48px !important;
   margin-left: 5px !important;
   padding-left: 8px !important;
@@ -158,12 +158,12 @@
   overflow: hidden;
 
   /* Transição completa */
-  transition: 
-    width 0.3s ease, 
-    max-width 0.3s ease, 
-    margin 0.3s ease, 
-    padding 0.3s ease, 
-    background-color 0.0s ease !important;
+  transition:
+    width 0.3s ease,
+    max-width 0.3s ease,
+    margin 0.3s ease,
+    padding 0.3s ease,
+    background-color 0s ease !important;
 }
 
 /* Estado Fechando (Collapsed) */
@@ -175,24 +175,33 @@
   margin-left: 5px !important;
   padding-left: 8px !important;
 
-  transition: 
-    width 0.3s ease, 
-    max-width 0.3s ease, 
-    margin 0.3s ease, 
-    padding 0.3s ease, 
+  transition:
+    width 0.3s ease,
+    max-width 0.3s ease,
+    margin 0.3s ease,
+    padding 0.3s ease,
     background-color 0.3s ease !important;
 }
 
 /* --- VERSÃO MOBILE (Breakpoints) --- */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .sidebar {
-    position: fixed;
+    position: fixed !important; /* Garante que saia do fluxo do desktop */
+    top: 0;
+    width: 280px !important;    /* FORÇA a largura total no mobile */
     left: -100%; /* Escondido fora da tela */
     z-index: 2000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease !important; /* Suaviza a entrada lateral */
   }
 
   .sidebar.mobileActive {
     left: 0 !important;
+  }
+
+  /* Quando o estado isMobileOpen for true, ela aparece */
+  .sidebar.mobileActive {
+    left: 0; /* Desliza para dentro da tela [cite: 2026-01-27] */
   }
 
   .closeBtnMobile {
@@ -203,6 +212,31 @@
   }
 
   .toggleBtn {
-   display: none; /* Esconde a seta de recolher no mobile */
+    display: none; /* Esconde a seta de recolher no mobile */
+  }
+  /* Overlay (fundo escurecido atrás do menu flutuante) */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1900;
+  }
+  /* Garante que os botões internos ocupem a largura correta no menu flutuante */
+  .sidebar.mobileActive .menu > button,
+  .sidebar.mobileActive .menu > div,
+  .sidebar.mobileActive .menu > a {
+    width: 250px !important;
+    max-width: 250px !important;
+    margin-left: 15px !important;
+    opacity: 1 !important;
+  }
+  /* Garante que o texto dentro dos botões (BotaoVisaoGeral, etc) fique visível */
+  .sidebar.mobileActive span, 
+  .sidebar.mobileActive p {
+    display: inline-block !important;
+    opacity: 1 !important;
   }
 }
