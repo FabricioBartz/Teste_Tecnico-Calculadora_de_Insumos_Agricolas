@@ -42,7 +42,7 @@ Este projeto foi construído utilizando as melhores práticas de desenvolvimento
 
 1.  Clone este repositório:
     ```bash
-    git clone [https://github.com/seu-usuario/agrohub.git](https://github.com/seu-usuario/agrohub.git)
+    git clone [https://github.com/FabricioBartz/Teste_Tecnico-Calculadora_de_Insumos_Agricolas.git]
     ```
 2.  Instale as dependências:
     ```bash
