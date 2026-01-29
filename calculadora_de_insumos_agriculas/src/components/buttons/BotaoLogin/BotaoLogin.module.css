@@ -55,6 +55,7 @@
 
   /* Feedback visual ao passar o mouse */
   .loginBtn:hover {
+    background-color: #E8E0CB; 
     border-radius: 50%;
   }
 
