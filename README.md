@@ -1,4 +1,4 @@
-# 🌾 AgroHub - Calculadora de Sementes
+# 🌾 AgroHub - Calculadora de Insumos Agrícolas
 
 <p align="center">
   <img src="./screenshots/preview.png" alt="Preview do AgroHub" width="600px">
@@ -63,3 +63,5 @@ Este projeto foi construído utilizando as melhores práticas de desenvolvimento
 | **Milho** | 20 kg/ha | 20 kg |
 
 ---
+
+Autor: Fabricio Fiss Bartz
