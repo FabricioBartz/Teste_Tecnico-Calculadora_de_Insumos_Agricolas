@@ -10,18 +10,37 @@
 :root {
   /* Variáveis para facilitar a manutenção */
   --font-principal: 'Work Sans', sans-serif;
+  --cor-texto: #2D3436;
   
 }
 
 body {
   /* Aplicando a tipografia */
   font-family: var(--font-principal);
-  font-weight: 600; 
-  line-height: 1.4; 
-  background-color: var(--cor-fundo);
-  color: #2D3436;
+  color: var(--cor-texto);
   -webkit-font-smoothing: antialiased;
+  line-height: 1.4;
 }
+
+h1 { font-size: 64px; font-weight: 600; line-height: 120%; }
+h2 { font-size: 48px; font-weight: 600; line-height: 120%; }
+h3 { font-size: 40px; font-weight: 600; line-height: 120%; }
+h4 { font-size: 32px; font-weight: 600; line-height: 120%; }
+h5 { font-size: 24px; font-weight: 600; line-height: 120%; }
+h6 { font-size: 20px; font-weight: 600; line-height: 120%; }
+
+/* --- BODY TEXT (Conforme Guia de Estilo) --- */
+p, .body-large { font-size: 18px; font-weight: 400; line-height: 140%; }
+.body-medium { font-size: 16px; font-weight: 400; line-height: 140%; }
+.body-small { font-size: 14px; font-weight: 400; line-height: 140%; }
+
+/* --- CAPTION / FOOTNOTE --- */
+caption, .caption { font-size: 12px; font-weight: 600; line-height: 140%; letter-spacing: 4%; }
+small, .footnote { font-size: 10px; font-weight: 400; line-height: 140%; }
+
+/* Classes Utilitárias de Peso */
+.semibold { font-weight: 600 !important; }
+.regular { font-weight: 400 !important; }
 
 #root {
   

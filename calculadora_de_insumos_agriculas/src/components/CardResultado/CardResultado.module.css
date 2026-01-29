@@ -1,21 +1,18 @@
-/* estilos para o componente Resultado*/
+/* Estilos para o componente CardResultado */
 .containerResultado {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 100%;
-  
 }
 
+/* Título do resultado */
 .titulo {
-  font-family: "Work Sans", sans-serif;
-  font-style: SemiBold;
-  font-weight: 600;
-  font-size: 20px;
   color: #111111;
   padding-bottom: 20px;
 }
 
+/* Wrapper para os cards de informação */
 .cardsWrapper {
   gap: 20px;
   border-radius: 12px;
@@ -23,82 +20,81 @@
   flex-direction: column;
 }
 
+/* Estilo individual para cada card de informação */
 .cardInfo {
   background-color: #f5f3ee;
   padding: 24px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-
-  /* MUDANÇA: Use 100% para ele se ajustar aos 358px do pai */
-  width: 100% !important;
+  width: 100%;
   max-width: 100%;
   height: auto;
   min-height: 142px;
   box-sizing: border-box;
 }
 
+/* Cabeçalho do card com ícone e texto */
 .headerInfo {
   display: flex;
   align-items: center;
   gap: 8px;
   color: #111111;
-  font-family: "Work Sans", sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  box-sizing: border-box;
 }
 
+/* Valor destacado no card */
 .valor {
-  font-family: "Work Sans", sans-serif;
-  font-weight: 600;
-  font-size: 32px;
   color: #789326;
-  margin: 0;
+  padding-top: 40px;
 }
 
+/* Texto descritivo ao lado do ícone */
 .texto {
-  font-family: Work Sans;
-  font-weight: 600;
-  font-style: SemiBold;
-  font-size: 14px;
   line-height: 100%;
   letter-spacing: 0.13px;
   vertical-align: middle;
 }
 
+/* Ícone dentro do card */
 .icon {
   width: 24px;
   height: 24px;
   display: block;
 }
 
+/* Responsividade para telas menores */
 @media (max-width: 1100px) {
+  /* Ajustes para empilhar os cards */
   .cardsWrapper {
-    flex-direction: row; /* Muda para horizontal apenas no celular */
-    gap: 12px;           /* Espaço menor para caber na tela [cite: 2026-01-27] */
+    flex-direction: row; /* Muda para horizontal */
+    gap: 12px; /* Espaço menor para caber na tela */
   }
 
+  /* Cada card ocupa 50% da largura disponível */
   .containerResultado {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
   }
+
+  /* Estilo individual para cada card de informação */
   .cardInfo {
-    flex: 1;             /* Faz cada card ocupar 50% da largura */
-    padding: 16px;       /* Reduz o respiro interno para sobrar espaço [cite: 2026-01-27] */
+    flex: 1; /* Faz cada card ocupar 50% da largura */
+    padding: 16px; /* Reduz o respiro interno para sobrar espaço */
     min-height: 120px;
   }
+
+  /* Valor destacado no card */
   .valor {
     padding-top: 20px;
-    font-size: 24px;     /* Diminui o número para não quebrar o layout [cite: 2026-01-27] */
+    /* Sobrescreve o h4 global apenas para o mobile não quebrar */
+    font-size: 24px !important;
   }
+
+  /* Cabeçalho do card com ícone e texto */
   .headerInfo {
-    flex-direction: column; /* Ícone em cima do texto igual à sua foto */
+    flex-direction: column;
     align-items: flex-start;
   }
-
-  
-
 }

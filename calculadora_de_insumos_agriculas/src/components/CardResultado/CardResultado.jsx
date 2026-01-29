@@ -6,7 +6,7 @@ export default function CardResultado({ dados }) {
 
   return (
     <div className={styles.containerResultado}>
-      <h2 className={styles.titulo}>Resultado do Cálculo</h2>
+      <h6 className={styles.titulo}>Resultado do Cálculo</h6>
       
       <div className={styles.cardsWrapper}>
         <div className={styles.cardInfo}>
@@ -16,9 +16,9 @@ export default function CardResultado({ dados }) {
                     alt="Sacos necessários"
                     className={styles.icon}
                   />
-            <div className={styles.texto}>Total de sementes</div>
+            <div className={`${styles.texto} body-small semibold`}>Total de sementes</div>
           </div>
-          <h2 className={styles.valor}>{dados ? `${dados.kg} kg` : "0 kg"}</h2>
+          <h4 className={styles.valor}>{dados ? `${dados.kg} kg` : "0 kg"}</h4>
         </div>
 
         <div className={styles.cardInfo}>
@@ -28,9 +28,9 @@ export default function CardResultado({ dados }) {
                     alt="Sacos necessários"
                     className={styles.icon}
                   />
-            <div className={styles.texto}>Sacos necessários</div>
+            <div className={`${styles.texto} body-small semibold`}>Sacos necessários</div>
           </div>
-          <h2 className={styles.valor}>{dados ? dados.sacos : "0"}</h2>
+          <h4 className={styles.valor}>{dados ? dados.sacos : "0"}</h4>
         </div>
       </div>
     </div>

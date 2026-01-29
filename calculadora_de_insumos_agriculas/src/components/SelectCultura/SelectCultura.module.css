@@ -1,8 +1,10 @@
+/* Container geral do Select */
 .selectWrapper {
   position: relative;
   width: 100%;
 }
 
+/* Estilo do campo select */
 .select {
   width: 100%;
   height: 56px;
@@ -13,10 +15,7 @@
   align-items: center;
   background-color: #ffffff;
   cursor: pointer;
-  font-family: "Work Sans", sans-serif;
   color: #111111; /* Cor do placeholder */
-  font-weight: 400;
-  font-style: Regular;
   transition: border-color 0.2s;
   margin-top: 8px;
 }
@@ -28,11 +27,7 @@
 /* Quando o campo está aberto, aplica a borda verde */
 .select.active {
   border-color: #789326;
-  font-family: "Work Sans", sans-serif;
   color: #9a9a9a; /* Cor do placeholder */
-  font-weight: 400;
-  font-style: Regular;
-  font-size: 16px; 
 }
 
 /* Seta Customizada */
@@ -49,6 +44,7 @@
   top: 28px; /* Metade dos 56px */
   transform: translateY(-50%);
   pointer-events: none;
+  
 }
 
 /* Gira a seta */
@@ -60,10 +56,7 @@
 
 /* Caixa customizada */
 .optionsCustom {
-  font-family: "Work Sans", sans-serif;
   color: #4e4e4e; /* Cor do placeholder */
-  font-weight: 400;
-  font-style: Regular;
   position: absolute;
   top: 60px;
   width: 100%;
@@ -74,55 +67,39 @@
   overflow: hidden;
   animation: abrirLista 0.3s ease-out;
 }
+
 /* CONDIÇÃO 1: Texto "Apagado" (Placeholder) */
 .vazio {
-  font-family: "Work Sans", sans-serif;
-  color: #9A9A9A; /* Cor do placeholder */
-  font-weight: 400;
-  font-style: Regular;
+  color: #9a9a9a; /* Cor do placeholder */
 }
 
 /* CONDIÇÃO 2: Texto Selecionado (Ativo) */
 .preenchido {
-  color: #111111; 
-  font-family: "Work Sans", sans-serif;
-  font-weight: 400;
-}
-/* Animação de abertura */
-@keyframes abrirLista {
-  from {
-    opacity: 0;
-    transform: translateY(-10px); 
-  }
-  to {
-    opacity: 1;
-    transform: translateY(
-      0
-    ); 
-  }
+  color: #111111;
 }
 
+/* Item da lista */
 .optionItem {
   padding: 12px 16px;
-  font-family: "Work Sans", sans-serif;
   cursor: pointer;
   color: #333;
 }
 
+/* Fundo leve ao passar o mouse */
 .optionItem:hover {
-  background-color: #f4fae2; /* Fundo leve ao passar o mouse [cite: 2025-11-19] */
+  background-color: #f4fae2; 
 }
 
 /* Quando há erro, forçamos a cor vermelha no texto que estiver dentro da div */
 .selectErro {
   border-color: #e74c3c !important;
-  color: #e74c3c !important; 
+  color: #e74c3c !important;
 }
 
 /* Troca a imagem da seta pelo ponto de exclamação */
 .wrapperErro::after {
   content: "" !important;
-  background-image: url("../../assets/aviso.svg") !important; 
+  background-image: url("../../assets/aviso.svg") !important;
   width: 24px !important;
   height: 24px !important;
   background-size: 24px 24px !important; /* Garante que a imagem preencha o espaço sem sobrar */
@@ -131,10 +108,22 @@
   /* Trava o ícone para não girar */
   transform: translateY(-50%) rotate(0deg) !important;
   /* Remove filtros de cor esverdeados/cinzas da seta original */
-  filter: none !important; 
+  filter: none !important;
 }
 
 /* Garante que o texto 'vazio' (placeholder) também fique vermelho se houver erro */
 .selectErro.vazio {
   color: #e74c3c !important;
+}
+
+/* Animação de abertura */
+@keyframes abrirLista {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

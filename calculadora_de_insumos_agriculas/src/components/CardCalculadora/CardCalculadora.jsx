@@ -14,7 +14,7 @@ export default function CardCalculadora({
 }) {
   return (
     <div className={styles.card}>
-      <h1 className={styles.titulo}>Informações básicas</h1>
+      <h6 className={styles.titulo}>Informações básicas</h6>
 
       <form onSubmit={aoCalcular} className={styles.tituloformulario}>
         <InputArea 
