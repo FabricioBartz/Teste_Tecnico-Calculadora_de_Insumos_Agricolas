@@ -52,12 +52,14 @@ export default function Sidebar({ isCollapsed, isMobileOpen, onClose, onToggle }
         </div>
 
       <nav className={styles.menu}>
+        
         {/* Botões do menu principal */}
-        <VisaoGeral isCollapsed={effectivelyCollapsed}/>
-        <AreaPlantio isCollapsed={effectivelyCollapsed} />
-        <Orcamentos isCollapsed={effectivelyCollapsed} />
-        <PlanejamentoSafra isCollapsed={effectivelyCollapsed} />
-        <Monitoramento isCollapsed={effectivelyCollapsed} />
+          <VisaoGeral isCollapsed={effectivelyCollapsed}/>
+          <AreaPlantio isCollapsed={effectivelyCollapsed} />
+          <Orcamentos isCollapsed={effectivelyCollapsed} />
+          <PlanejamentoSafra isCollapsed={effectivelyCollapsed} />
+          <Monitoramento isCollapsed={effectivelyCollapsed} />
+        
       </nav>
 
       <div className={styles.bottomSection}>

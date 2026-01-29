@@ -91,7 +91,7 @@
 }
 
 /* Estilização do Menu de Navegação */
-.menu {
+.menu  {
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Alinha à esquerda no modo aberto */
@@ -141,9 +141,9 @@
 
 /* todos os botões dentro do nav 'menu' */
 /* Estado Normal (Aberto) */
-.menu > button,
-.menu > div,
-.menu > a {
+.menu  > button,
+.menu  > div,
+.menu  > a {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
