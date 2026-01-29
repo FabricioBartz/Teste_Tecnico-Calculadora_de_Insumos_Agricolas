@@ -52,13 +52,14 @@ export default function Sidebar({ isCollapsed, isMobileOpen, onClose, onToggle }
         </div>
 
       <nav className={styles.menu}>
-        
         {/* Botões do menu principal */}
-          <VisaoGeral isCollapsed={effectivelyCollapsed}/>
-          <AreaPlantio isCollapsed={effectivelyCollapsed} />
-          <Orcamentos isCollapsed={effectivelyCollapsed} />
-          <PlanejamentoSafra isCollapsed={effectivelyCollapsed} />
-          <Monitoramento isCollapsed={effectivelyCollapsed} />
+        <ul className={styles.menuList}>
+          <li><VisaoGeral isCollapsed={effectivelyCollapsed}/></li>
+          <li><AreaPlantio isCollapsed={effectivelyCollapsed} /></li>
+          <li><Orcamentos isCollapsed={effectivelyCollapsed} /></li>
+          <li><PlanejamentoSafra isCollapsed={effectivelyCollapsed} /></li>
+          <li><Monitoramento isCollapsed={effectivelyCollapsed} /></li>
+        </ul>
         
       </nav>
 
@@ -66,8 +67,10 @@ export default function Sidebar({ isCollapsed, isMobileOpen, onClose, onToggle }
         <hr className={styles.divider} />
         <nav className={styles.menu}>
           {/* Botões de configurações e sair */}
-          <Configuracoes isCollapsed={effectivelyCollapsed} />
-          <Sair isCollapsed={effectivelyCollapsed} />
+          <ul className={styles.menuList}>
+            <li><Configuracoes isCollapsed={effectivelyCollapsed} /></li>
+            <li><Sair isCollapsed={effectivelyCollapsed} /></li>
+          </ul>
         </nav>
       </div>
     </aside>

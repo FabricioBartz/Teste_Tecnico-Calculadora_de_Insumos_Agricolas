@@ -101,6 +101,22 @@
   flex: 1;
 }
 
+.menuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menuList li {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
 /* Seção inferior da sidebar (botões extras) */
 .bottomSection {
   display: flex;
@@ -141,9 +157,9 @@
 
 /* todos os botões dentro do nav 'menu' */
 /* Estado Normal (Aberto) */
-.menu  > button,
-.menu  > div,
-.menu  > a {
+.menuList li  > button,
+.menuList li > div,
+.menuList li > a {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
@@ -170,9 +186,9 @@
 }
 
 /* Estado Fechando (Collapsed) */
-.collapsed .menu > button,
-.collapsed .menu > div,
-.collapsed .menu > a {
+.collapsed .menuList li > button,
+.collapsed .menuList li > div,
+.collapsed .menuList li > a {
   width: 40px !important;
   max-width: 40px !important;
   margin-left: 5px !important;
@@ -232,10 +248,18 @@
     z-index: 1900;
   }
 
+  /* Garante que a lista ocupe o espaço correto no mobile */
+  .menuList {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+
   /* Garante que os botões internos ocupem a largura correta no menu flutuante */
-  .sidebar.mobileActive .menu > button,
-  .sidebar.mobileActive .menu > div,
-  .sidebar.mobileActive .menu > a {
+  .sidebar.mobileActive .menuList li > button,
+  .sidebar.mobileActive .menuList li > div,
+  .sidebar.mobileActive .menuList li > a {
     display: flex !important;
     align-items: center !important;
     justify-content: flex-start !important;
