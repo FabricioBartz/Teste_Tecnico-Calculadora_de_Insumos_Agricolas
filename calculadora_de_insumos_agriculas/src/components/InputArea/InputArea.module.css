@@ -18,7 +18,7 @@
 
   /* Tipo de fonte */
   font-family:
-    "Work Sans", sans-serif; /* Substitua pelo nome real da sua Font 1 [cite: 2025-11-19] */
+    "Work Sans", sans-serif; 
   font-weight: 400; 
   font-size: 16px;
   line-height: 1.4; 
@@ -67,15 +67,6 @@
   top: 50%;
   transform: translateY(-50%) !important;
   pointer-events: none;
-}
-
-/* Animação de Tremidinha */
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-4px); }
-  50% { transform: translateX(4px); }
-  75% { transform: translateX(-4px); }
-  100% { transform: translateX(0); }
 }
 
 .containerErro {

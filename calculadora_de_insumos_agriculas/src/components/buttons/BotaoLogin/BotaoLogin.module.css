@@ -35,32 +35,30 @@
   .btnText {
     display: none; /* Esconde o texto no mobile */
   }
-  
+
   .loginBtn {
-    border: none;         /* Remove a borda  */
-    background: none;     /* Remove o fundo  */
-    width: auto;          /* Deixa o tamanho ser definido apenas pela imagem */
+    border: none; /* Remove a borda  */
+    background: none; /* Remove o fundo  */
+    width: auto; /* Deixa o tamanho ser definido apenas pela imagem */
     height: auto;
-    padding: 0;           /* Remove espaços internos */
+    padding: 0; /* Remove espaços internos */
     gap: 0;
   }
 
   .loginBtn img {
-    width: 24px;          /* Ajuste o tamanho do ícone dentro do círculo */
+    width: 24px; /* Ajuste o tamanho do ícone dentro do círculo */
     height: 24px;
-    display: block;       /* Remove espaços fantasmas de fontes */
+    display: block; /* Remove espaços fantasmas de fontes */
     filter: brightness(0);
   }
 
   /* Feedback visual ao passar o mouse */
-.loginBtn:hover {
-  background-color: #f4fae2;
-}
+  .loginBtn:hover {
+    background-color: transparent;
+  }
 
-/* Feedback visual ao clicar */
-.loginBtn:active {
-  background-color: #d6e0b5;
-}
-
-  
+  /* Feedback visual ao clicar */
+  .loginBtn:active {
+    background-color: none;
+  }
 }

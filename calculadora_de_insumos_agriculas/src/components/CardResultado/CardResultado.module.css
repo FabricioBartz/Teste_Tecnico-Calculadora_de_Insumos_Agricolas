@@ -4,6 +4,7 @@
   flex-direction: column;
   gap: 20px;
   width: 100%;
+  
 }
 
 .titulo {
@@ -72,13 +73,3 @@
   display: block;
 }
 
-/* AJUSTE PARA TELAS PEQUENAS (MOBILE) */
-@media (max-width: 768px) {
-  .card {
-    /* Força o tamanho exato de 358px no mobile */
-    width: 358px !important; 
-    min-width: 358px !important;
-    max-width: 358px !important;
-    margin: 0 auto; /* Centraliza o card caso a tela do celular seja maior que 358px */
-  }
-}

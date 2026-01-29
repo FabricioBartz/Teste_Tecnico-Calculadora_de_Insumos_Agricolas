@@ -20,3 +20,9 @@
 .notificationBtn:active {
   background-color: #DFD0AB; 
 }
+
+@media (max-width: 768px) {
+.notificationBtn:hover {
+  background-color: transparent; 
+}
+}
