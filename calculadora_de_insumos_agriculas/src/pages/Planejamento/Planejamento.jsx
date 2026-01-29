@@ -30,7 +30,7 @@ function PlanejamentoSafra() {
     }
     // Se não estiver vazia, mas for 0 ou menor, envia a segunda mensagem
     else if (Number(area) <= 0) {
-      novosErros.area = "Digite um numero valido";
+      novosErros.area = "Digite um número válido";
       temErro = true;
     }
 
