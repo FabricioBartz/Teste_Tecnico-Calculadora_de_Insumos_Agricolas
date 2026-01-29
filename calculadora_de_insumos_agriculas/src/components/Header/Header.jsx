@@ -4,9 +4,11 @@ import BotaoLogin from "../buttons/BotaoLogin/BotaoLogin";
 import BotaoNotificacao from "../buttons/BotaoNotificacao/BotaoNotificacao";
 import menu_hamburguer from "../../assets/menu_hamburguer.svg";
 
+{/* Componente Header com título dinâmico e botões de ação do usuário */}
 export default function Header({ onOpenMenu }) {
   const location = useLocation();
-
+  
+  {/* Mapeamento de rotas para títulos */}
   const titulos = {
     "/": "Planejamento de Safra",
     "/planejamento-safra": "Planejamento Safra",
@@ -25,7 +27,7 @@ export default function Header({ onOpenMenu }) {
         <button className={styles.menuBtn} onClick={onOpenMenu}>
           <img src={menu_hamburguer} alt="Abrir menu" />
         </button>
-        <h1 className={styles.pageTitle}>{tituloAtual}</h1>
+        <h5 className={styles.pageTitle}>{tituloAtual}</h5>
       </div>
 
       <div className={styles.userActions}>

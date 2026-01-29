@@ -9,10 +9,7 @@ export default function AreaPlantio({ isCollapsed }) {
       to="/area-plantio"
      
       className={({ isActive }) => `
-      ${styles.item} 
-      ${isActive ? styles.active : ""} 
-      ${isCollapsed ? styles.collapsed : ""}
-    `}
+       ${styles.item} ${isActive ? styles.active + " semibold" : ""} ${isCollapsed ? styles.collapsed : ""} body-medium`}
     >
       {({ isActive }) => (
         <>

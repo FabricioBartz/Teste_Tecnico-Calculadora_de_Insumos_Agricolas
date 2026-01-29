@@ -1,3 +1,4 @@
+/* Layout principal da aplicação */
 .app-layout {
   display: flex;
   height: 100vh; /* Mantém a altura da janela */
@@ -6,6 +7,7 @@
   overflow: hidden; /* A estrutura principal não deve rolar, apenas o conteúdo */
 }
 
+/* Container principal que envolve o conteúdo das páginas */
 .main-container {
   display: flex;
   flex-direction: column;
@@ -27,6 +29,7 @@
   -ms-overflow-style: none;
 }
 
+/* Área de conteúdo onde as páginas são renderizadas */
 .content-area {
   flex: 1;
   background-color: #ffffff; /* Cor de fundo clar */

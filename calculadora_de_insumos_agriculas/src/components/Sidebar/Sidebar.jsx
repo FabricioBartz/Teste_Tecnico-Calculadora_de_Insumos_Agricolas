@@ -16,7 +16,7 @@ export default function Sidebar({ isCollapsed, isMobileOpen, onClose, onToggle }
   
   // Estado para controlar qual item do menu está selecionado
   const [activeItem, setActiveItem] = useState("visao-geral");
-  
+  // Determina se a sidebar deve ser tratada como recolhida
   const effectivelyCollapsed = isCollapsed && !isMobileOpen;
 
   return (

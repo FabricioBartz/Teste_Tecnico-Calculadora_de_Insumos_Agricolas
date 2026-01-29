@@ -7,7 +7,7 @@ import VisaoGeral from "./pages/VisaoGeral/VisaoGeral";
 import AreaPlantio from "./pages/AreaPlantio/AreaPlantio";
 import Monitoramento from "./pages/Monitoramento/Monitoramento";
 import Orcamentos from "./pages/Orcamentos/Orcamentos";
-import Configuracoes from "./pages/configuracoes/configuracoes";
+import Configuracoes from "./pages/Configuracoes/Configuracoes";
 import Sair from "./pages/Sair/Sair";
 import "./app.css";
 

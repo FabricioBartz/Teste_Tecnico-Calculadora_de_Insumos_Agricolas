@@ -1,3 +1,4 @@
+/* Estilo do botão */
 .item {
   display: flex;
   align-items: center;
@@ -5,44 +6,39 @@
   gap: 12px;
   cursor: pointer;
   border-radius: 8px; /* Arredondamento */
-  transition: all 0.3s ease;
-  width: 100%;/* Largura  */
+  width: 100%; /* Largura  */
   height: 48px; /* Altura */
   box-sizing: border-box;
   background-color: transparent;
-  color: #F5F3EE;
+  color: #f5f3ee;
+  transition: all 0.3s ease;
   text-decoration: none;
 }
 
+/* Feedback visual ao passar o mouse */
 .item:hover {
-  background-color: #6B8718; 
+  background-color: #6b8718;
 }
 
+/* Estado ativo do botão */
 .active {
-  background-color: #6B8718 
+  background-color: #6b8718;
 }
 
+/* Estilo do texto do botão */
 .label {
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 400;
-  line-height: 1.4;
   white-space: nowrap;
-  font-size: 16px;
 }
 
-
+/* Estilo do botão quando a sidebar está recolhida */
 .item.collapsed:hover {
-  background-color: #6B8718;
+  background-color: #6b8718;
   opacity: 1;
 }
 
 /* Quanto ao estilo do texto ativo */
 .active .label {
   color: #dfff7e; 
-  font-family: Work Sans;
-  font-weight: 600;
-  font-style: SemiBold;
-  font-size: 16px;
   line-height: 100%;
   letter-spacing: 0%;
 }

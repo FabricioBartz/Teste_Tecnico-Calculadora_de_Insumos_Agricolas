@@ -8,10 +8,7 @@ export default function Monitoramento({ isCollapsed }) {
     <NavLink
       to="/monitoramento"
       className={({ isActive }) => `
-      ${styles.item} 
-      ${isActive ? styles.active : ""} 
-      ${isCollapsed ? styles.collapsed : ""}
-    `}
+       ${styles.item} ${isActive ? styles.active + " semibold" : ""} ${isCollapsed ? styles.collapsed : ""} body-medium`}
     >
       {({ isActive }) => (
         <>

@@ -31,6 +31,7 @@
   background-color: #d6e0b5;
 }
 
+/* versão mobile */
 @media (max-width: 768px) {
   .btnText {
     display: none; /* Esconde o texto no mobile */

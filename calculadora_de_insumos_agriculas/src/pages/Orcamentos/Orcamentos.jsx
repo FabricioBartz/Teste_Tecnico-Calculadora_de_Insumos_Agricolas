@@ -6,8 +6,8 @@ export default function Orcamentos() {
       <div className={styles.content}>
         <div className={styles.warningCard}>
           <span className={styles.icon}>⚠️</span>
-          <h2>Página em Desenvolvimento</h2>
-          <p>Esta funcionalidade ainda não foi implementada.</p>
+          <h5>Página em Desenvolvimento</h5>
+          <p className="body-medium">Esta funcionalidade ainda não foi implementada.</p>
         </div>
       </div>
     </main>

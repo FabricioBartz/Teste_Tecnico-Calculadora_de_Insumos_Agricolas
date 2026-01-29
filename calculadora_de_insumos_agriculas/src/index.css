@@ -1,12 +1,14 @@
 /* 1. Import da fonte Work Sans */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
 
+/* 2. Reset básico e box-sizing global */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* 3. Variáveis de CSS para tipografia e cores */
 :root {
   /* Variáveis para facilitar a manutenção */
   --font-principal: 'Work Sans', sans-serif;

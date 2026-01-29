@@ -2,22 +2,17 @@
   /* Ocupa 100% da área definida pelo .content-area do Global */
   width: 100%;
   height: 100%;
-  
-  /* Reset de fundo */
   background-color: #ffffff;
-  
-  /* Centralização Absoluta usando Flexbox */
-  display: flex;
+  display: flex;  /* Centralização Absoluta usando Flexbox */
   justify-content: center; /* Centro Horizontal */
   align-items: center;     /* Centro Vertical */
-  
-  /* Remove qualquer margem que empurre para fora da tela */
   margin: 0;
   padding: 20px;
   box-sizing: border-box;
   overflow: hidden;
 }
 
+/* Conteúdo centralizado */
 .content {
   display: flex;
   justify-content: center;
@@ -25,6 +20,7 @@
   width: 100%;
 }
 
+/* Card de aviso */
 .warningCard {
   background: #ffffff;
   padding: 40px;
@@ -37,22 +33,21 @@
   width: 90%;
 }
 
+/* Ícone de aviso */
 .icon {
   font-size: 50px;
   display: block;
   margin-bottom: 20px;
 }
 
-.warningCard h2 {
+/* Títulos e textos do card */
+.warningCard h5 {
   color: #333333;
-  font-family: 'Work Sans', sans-serif;
   margin-bottom: 15px;
   font-size: 24px;
 }
 
 .warningCard p {
   color: #666666;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 16px;
   line-height: 1.5;
 }

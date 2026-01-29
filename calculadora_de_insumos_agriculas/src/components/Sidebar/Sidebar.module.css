@@ -31,6 +31,7 @@
   transition: opacity 0.3s ease;
 }
 
+/* Texto do logo */
 .logoText {
   display: flex;
   align-items: center;
@@ -100,6 +101,7 @@
   flex: 1;
 }
 
+/* Seção inferior da sidebar (botões extras) */
 .bottomSection {
   display: flex;
   flex-direction: column;
@@ -184,8 +186,9 @@
     background-color 0.3s ease !important;
 }
 
-/* --- VERSÃO MOBILE (Breakpoints) --- */
+/* --- VERSÃO MOBILE  --- */
 @media (max-width: 768px) {
+  /* Sidebar como menu flutuante */
   .sidebar {
     position: fixed !important; /* Garante que saia do fluxo do desktop */
     top: 0;
@@ -196,6 +199,7 @@
     transition: left 0.3s ease !important; /* Suaviza a entrada lateral */
   }
 
+  /* Quando o estado isMobileOpen for false, ela fica escondida */
   .sidebar.mobileActive {
     left: 0 !important;
   }
@@ -205,6 +209,7 @@
     left: 0; /* Desliza para dentro da tela [cite: 2026-01-27] */
   }
 
+  /* Botão de fechar (X) no canto superior direito */
   .closeBtnMobile {
     display: block; /* Só aparece no mobile */
     position: absolute;
@@ -215,6 +220,7 @@
   .toggleBtn {
     display: none; /* Esconde a seta de recolher no mobile */
   }
+
   /* Overlay (fundo escurecido atrás do menu flutuante) */
   .overlay {
     position: fixed;
@@ -225,6 +231,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1900;
   }
+
   /* Garante que os botões internos ocupem a largura correta no menu flutuante */
   .sidebar.mobileActive .menu > button,
   .sidebar.mobileActive .menu > div,
@@ -232,7 +239,6 @@
     display: flex !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    
     width: 224px !important;       /* Largura exata do desktop aberto */
     max-width: 224px !important;   /* Trava a largura */
     height: 48px !important;
@@ -248,7 +254,4 @@
     display: inline-block !important;
     opacity: 1 !important;
   }
-
-  
-
 }

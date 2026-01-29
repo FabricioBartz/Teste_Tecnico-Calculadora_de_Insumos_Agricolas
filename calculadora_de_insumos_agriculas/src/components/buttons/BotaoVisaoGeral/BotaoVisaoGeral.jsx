@@ -9,10 +9,7 @@ export default function VisaoGeral({ isCollapsed }) {
       to="/visao-geral"
      
       className={({ isActive }) => `
-        ${styles.item} 
-        ${isActive ? styles.active : ""} 
-        ${isCollapsed ? styles.collapsed : ""}
-      `}
+        ${styles.item} ${isActive ? styles.active + " semibold" : ""} ${isCollapsed ? styles.collapsed : ""} body-medium`}
     >
       {({ isActive }) => (
         <>

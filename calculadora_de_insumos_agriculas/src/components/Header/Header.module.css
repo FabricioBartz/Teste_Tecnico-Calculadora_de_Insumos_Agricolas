@@ -1,3 +1,4 @@
+/* Estilo do Header da aplicação */
 .header {
   /* Dimensões e Posicionamento */
   height: 56px;
@@ -24,9 +25,6 @@
 
 /* texto */
 .pageTitle {
-  font-family: "Work Sans", sans-serif;
-  font-weight: 600;
-  font-size: 24px;
   line-height: 1.2;
   letter-spacing: 0;
   color: #111111;
@@ -35,6 +33,7 @@
   align-items: center;
 }
 
+/* Ações do usuário (botões à direita) */
 .userActions {
   display: flex;
   align-items: center;
@@ -42,6 +41,7 @@
   flex-shrink: 0;
 }
 
+/* Botão de menu hambúrguer para mobile */
 .menuBtn {
   display: none; /* Escondido no desktop */
   background: none;
@@ -49,12 +49,14 @@
   cursor: pointer;
 }
 
+/* Seção esquerda do header */
 .leftSection {
   display: flex;
   align-items: center;
   gap: 12px; /* Espaço entre o hambúrguer e o texto "Planejamento" */
 }
 
+/* Versão mobile */
 @media (max-width: 768px) {
   .menuBtn {
     display: flex;
@@ -69,7 +71,8 @@
   }
 
   .pageTitle {
-    font-size: 20px; /* Diminui levemente o título para caber no celular com o botão */
+    font-size: 20px !important; /* Diminui levemente o título para caber no celular com o botão */
+    line-height: 120%; 
   }
 
   .userActions {

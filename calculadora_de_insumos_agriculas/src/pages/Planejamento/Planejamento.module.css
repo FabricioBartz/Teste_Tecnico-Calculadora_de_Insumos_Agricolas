@@ -1,3 +1,4 @@
+/* Estilos para a página de Planejamento Safra */
 .containerPrincipal {
   display: flex;
   justify-content: center; /* Centraliza o conteúdo na tela */
@@ -10,6 +11,7 @@
   min-width: 320px; /* RESOLUÇÃO MÍNIMA: impede quebra total da tela */
 }
 
+/* Wrapper para o conteúdo principal: Calculadora e Resultado */
 .contentWrapper {
   justify-content: center;
   display: flex;
@@ -36,7 +38,7 @@
   transition: all 0.3s ease;
 }
 
-/* Responsividade: Empilha em telas menores (celulares) */
+/* Responsividade: Empilha em telas menores */
 @media (max-width: 1100px) {
   
 .contentWrapper {

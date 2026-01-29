@@ -8,10 +8,7 @@ export default function Configuracoes({ isCollapsed }) {
     <NavLink
       to="/configuracoes"
       className={({ isActive }) => `
-      ${styles.item} 
-      ${isActive ? styles.active : ""} 
-      ${isCollapsed ? styles.collapsed : ""}
-    `}
+       ${styles.item} ${isActive ? styles.active + " semibold" : ""} ${isCollapsed ? styles.collapsed : ""} body-medium`}
     >
       {({ isActive }) => (
         <>
