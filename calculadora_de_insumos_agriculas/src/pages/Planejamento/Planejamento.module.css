@@ -18,7 +18,7 @@
   width: 100%;
   max-width: 1000px;  /* Limita a largura para não espalhar demais */
   flex-wrap: nowrap;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: center; /* Centraliza os dois cards no meio do espaço disponível */
   margin: 0 auto; /* Centralização extra de segurança */
   
@@ -38,34 +38,24 @@
 
 /* Responsividade: Empilha em telas menores (celulares) */
 @media (max-width: 1100px) {
+  
 .contentWrapper {
     flex-direction: column;
     align-items: center; /* Centraliza os cards no modo empilhado */
     gap: 40px;
   }
-
-  .cardCalculadora, .containerResultado {
-  display: flex;
-  flex-direction: column;
-  /* Ambos começam com 358px, podem crescer (1) e encolher (1) juntos */
-  flex: 1 1 358px; 
-  min-width: 358px;
-  max-width: 480px;
-  width: 100%;
-  transition: all 0.3s ease;
-}
 }
 
 
 /* Responsividade para Celular*/
 @media (max-width: 768px) {
   .containerPrincipal {
-    padding: 20px 16px; 
+    padding: 40px 20px; 
+    
   }
   .contentWrapper {
     gap: 40px;
     align-items: center; /* Centraliza o bloco de 358px na tela do celular */
-    
   }
 
   .containerPrincipal {

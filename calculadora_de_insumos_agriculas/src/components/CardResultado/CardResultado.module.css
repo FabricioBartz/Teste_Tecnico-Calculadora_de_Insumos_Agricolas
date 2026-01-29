@@ -73,3 +73,32 @@
   display: block;
 }
 
+@media (max-width: 1100px) {
+  .cardsWrapper {
+    flex-direction: row; /* Muda para horizontal apenas no celular */
+    gap: 12px;           /* Espaço menor para caber na tela [cite: 2026-01-27] */
+  }
+
+  .containerResultado {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  }
+  .cardInfo {
+    flex: 1;             /* Faz cada card ocupar 50% da largura */
+    padding: 16px;       /* Reduz o respiro interno para sobrar espaço [cite: 2026-01-27] */
+    min-height: 120px;
+  }
+  .valor {
+    padding-top: 20px;
+    font-size: 24px;     /* Diminui o número para não quebrar o layout [cite: 2026-01-27] */
+  }
+  .headerInfo {
+    flex-direction: column; /* Ícone em cima do texto igual à sua foto */
+    align-items: flex-start;
+  }
+
+  
+
+}
