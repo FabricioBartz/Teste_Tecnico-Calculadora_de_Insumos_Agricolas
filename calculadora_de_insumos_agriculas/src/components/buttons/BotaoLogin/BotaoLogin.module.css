@@ -39,10 +39,10 @@
   .loginBtn {
     border: none; /* Remove a borda  */
     background: none; /* Remove o fundo  */
-    width: auto; /* Deixa o tamanho ser definido apenas pela imagem */
-    height: auto;
     padding: 0; /* Remove espaços internos */
     gap: 0;
+    width: 40px !important; 
+    height: 40px !important;
   }
 
   .loginBtn img {
@@ -54,7 +54,7 @@
 
   /* Feedback visual ao passar o mouse */
   .loginBtn:hover {
-    background-color: transparent;
+    border-radius: 50%;
   }
 
   /* Feedback visual ao clicar */
