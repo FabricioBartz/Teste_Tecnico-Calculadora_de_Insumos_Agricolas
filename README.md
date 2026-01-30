@@ -40,15 +40,25 @@ Este projeto foi construído utilizando as melhores práticas de desenvolvimento
 
 ## 📦 Como rodar o projeto
 
-1.  Clone este repositório:
+### **Pré-requisitos**
+Antes de começar, você precisará ter instalado em sua máquina o **Node.js** (recomenda-se a versão LTS). O Node é necessário para gerenciar as dependências via **npm**.
+
+1. Clone este repositório:
     ```bash
-    git clone [https://github.com/FabricioBartz/Teste_Tecnico-Calculadora_de_Insumos_Agricolas.git]
+    git clone [https://github.com/FabricioBartz/Teste_Tecnico-Calculadora_de_Insumos_Agricolas.git](https://github.com/FabricioBartz/Teste_Tecnico-Calculadora_de_Insumos_Agricolas.git)
     ```
-2.  Instale as dependências:
+
+2. Entre na pasta do projeto:
+    ```bash
+    cd Teste_Tecnico-Calculadora_de_Insumos_Agricolas
+    ```
+
+3. Instale as dependências:
     ```bash
     npm install
     ```
-3.  Inicie o servidor de desenvolvimento:
+
+4. Inicie o servidor de desenvolvimento:
     ```bash
     npm run dev
     ```
