@@ -38,7 +38,7 @@
   white-space: nowrap;
 }
 
-/* botao que alterna o sidebar */
+/* Botao que alterna o sidebar */
 .toggleBtn {
   width: 36px;
   height: 36px;
@@ -61,7 +61,7 @@
   transition: background-color 0.2s ease;
 }
 
-/* ESTADO: SIDEBAR RECOLHIDA (Collapsed) */
+/* Estado: sidebar recolhida (Collapsed) */
 .collapsed {
   width: 50px;
 }
@@ -160,7 +160,7 @@
   margin-bottom: -20px;
 }
 
-/* BOTÃO DE FECHAR (X): Escondido por padrão no Desktop */
+/* Botão fechar (X): Escondido por padrão no Desktop */
 .closeBtnMobile {
   display: none;
   background: none;
@@ -215,7 +215,7 @@
     padding 0.3s ease,
 }
 
-/* --- VERSÃO MOBILE  --- */
+/* --- Versão Mobile  --- */
 @media (max-width: 768px) {
   /* Sidebar como menu flutuante */
   .sidebar {
@@ -244,13 +244,9 @@
     /* Tamanho 36x36 idêntico ao desktop */
     width: 36px;
     height: 36px;
-    
     align-items: center;
     justify-content: center;
-    
-    /* MUDANÇA AQUI: De redondo para quadrado com cantos suaves */
     border-radius: 8px; 
-    
     background: none;
     border: none;
     cursor: pointer;
