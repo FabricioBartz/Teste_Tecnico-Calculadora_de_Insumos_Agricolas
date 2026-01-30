@@ -1,6 +1,12 @@
 //função para inserir a área em hectares
 import styles from "./InputArea.module.css";
 
+// FUNÇÃO DE MÁSCARA VISUAL: Transforma o ponto do estado em vírgula para a tela
+const formatarParaExibicao = (val) => {
+  if (!val) return "";
+  return val.replace(".", ",");
+};
+
 export default function InputArea({ label, value, onChange, erro }) {
   return (
     <div className={styles.container}>
@@ -14,7 +20,8 @@ export default function InputArea({ label, value, onChange, erro }) {
           className={`${styles.input} ${erro ? styles.inputErro : ""} body-medium`}
           placeholder={erro ? erro : "Hectares (ha)"}
           type="text"
-          value={value}
+          inputMode="decimal"
+          value={formatarParaExibicao(value)}
           onChange={(e) => {
             let val = e.target.value;
 
@@ -34,8 +41,8 @@ export default function InputArea({ label, value, onChange, erro }) {
             */
             if (!/^\d*\.?\d*$/.test(val)) return;
 
-            // 3. TRAVA DE MÁXIMO 7 CARACTERES
-            if (val.length <= 7) {
+            // 3. TRAVA DE MÁXIMO 8 CARACTERES
+            if (val.length <= 8) {
               onChange(val);
             }
           }}

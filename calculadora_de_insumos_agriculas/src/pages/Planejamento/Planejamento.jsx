@@ -60,7 +60,7 @@ function PlanejamentoSafra() {
     if (info) {
       const kgTotal = Number(area) * info.rendimento;
       const sacosTotal = Math.ceil(kgTotal / info.sacoKg);
-      setDadosCalculados({ kg: kgTotal, sacos: sacosTotal });
+      setDadosCalculados({ kg: parseFloat(kgTotal.toFixed(2)), sacos: sacosTotal });
     }
   };
 
