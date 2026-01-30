@@ -13,14 +13,29 @@ export default function InputArea({ label, value, onChange, erro }) {
           // Se houver erro, uma classe extra para a borda ficar vermelha
           className={`${styles.input} ${erro ? styles.inputErro : ""} body-medium`}
           placeholder={erro ? erro : "Hectares (ha)"}
-          type="number"
-          min="0"
+          type="text"
           value={value}
           onChange={(e) => {
-            const val = e.target.value;
-            // 1. Permite se o valor for maior/igual a zero ou vazio (trava de negativos)
-            // 2. E (&&) apenas se o texto tiver 7 caracteres ou menos (trava de comprimento)
-            if ((val >= 0 || val === "") && val.length <= 7) {
+            let val = e.target.value;
+
+            // 1. Troca vírgula por ponto
+            val = val.replace(",", ".");
+
+            /* 2. A TRAVA DE MÍNIMO 0:
+               A Regex abaixo permite:
+               ^     : Início da linha
+               \d* : Qualquer quantidade de números (0, 1, 2...)
+               \.?   : No máximo um ponto decimal opcional
+               \d* : Qualquer quantidade de números após o ponto
+               $     : Fim da linha
+               
+               Como o caractere "-" não está na lista permitida, 
+               o valor negativo é bloqueado antes mesmo de entrar no estado.
+            */
+            if (!/^\d*\.?\d*$/.test(val)) return;
+
+            // 3. TRAVA DE MÁXIMO 7 CARACTERES
+            if (val.length <= 7) {
               onChange(val);
             }
           }}
