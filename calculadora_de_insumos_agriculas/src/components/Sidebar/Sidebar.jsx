@@ -12,8 +12,12 @@ import Monitoramento from "../buttons/BotaoMonitoramento/BotaoMonitoramento";
 import Configuracoes from "../buttons/BotaoConfiguracoes/BotaoConfiguracoes";
 import Sair from "../buttons/BotaoSair/BotaoSair";
 
-export default function Sidebar({ isCollapsed, isMobileOpen, onClose, onToggle }) {
-  
+export default function Sidebar({
+  isCollapsed,
+  isMobileOpen,
+  onClose,
+  onToggle,
+}) {
   // Estado para controlar qual item do menu está selecionado
   const [activeItem, setActiveItem] = useState("visao-geral");
   // Determina se a sidebar deve ser tratada como recolhida
@@ -21,26 +25,25 @@ export default function Sidebar({ isCollapsed, isMobileOpen, onClose, onToggle }
 
   return (
     <>
-      {/* Overlay para fechar ao clicar fora no mobile */}
-      {isMobileOpen && <div className={styles.overlay} onClick={onClose} />}
-    <aside className={`
+      <aside
+        className={`
         ${styles.sidebar} 
         /* SÓ aplica 'collapsed' se NÃO for mobile open */
         ${isCollapsed && !isMobileOpen ? styles.collapsed : ""} 
         ${isMobileOpen ? styles.mobileActive : ""}
-      `}>
-    
-      <div className={styles.logoContainer}> 
-        <div className={styles.logoWrapper}>
-          <img src={logoicon} alt="AgroHub" />
-          {!effectivelyCollapsed && (
-            <span>
-              <img src={logotext} alt="AgroHub" className={styles.logoText} />
-            </span>
-          )}
-        </div>
+      `}
+      >
+        <div className={styles.logoContainer}>
+          <div className={styles.logoWrapper}>
+            <img src={logoicon} alt="AgroHub" />
+            {!effectivelyCollapsed && (
+              <span>
+                <img src={logotext} alt="AgroHub" className={styles.logoText} />
+              </span>
+            )}
+          </div>
 
-        {/* Botão de Toggle (Desktop) */}
+          {/* Botão de Toggle (Desktop) */}
           <button onClick={onToggle} className={styles.toggleBtn}>
             <img src={togglesidebar} alt="Alternar" />
           </button>
@@ -51,29 +54,49 @@ export default function Sidebar({ isCollapsed, isMobileOpen, onClose, onToggle }
           </button>
         </div>
 
-      <nav className={styles.menu}>
-        {/* Botões do menu principal */}
-        <ul className={styles.menuList}>
-          <li><VisaoGeral isCollapsed={effectivelyCollapsed}/></li>
-          <li><AreaPlantio isCollapsed={effectivelyCollapsed} /></li>
-          <li><Orcamentos isCollapsed={effectivelyCollapsed} /></li>
-          <li><PlanejamentoSafra isCollapsed={effectivelyCollapsed} /></li>
-          <li><Monitoramento isCollapsed={effectivelyCollapsed} /></li>
-        </ul>
-        
-      </nav>
-
-      <div className={styles.bottomSection}>
-        <hr className={styles.divider} />
         <nav className={styles.menu}>
-          {/* Botões de configurações e sair */}
+          {/* Botões do menu principal */}
           <ul className={styles.menuList}>
-            <li><Configuracoes isCollapsed={effectivelyCollapsed} /></li>
-            <li><Sair isCollapsed={effectivelyCollapsed} /></li>
+            <li>
+              <VisaoGeral isCollapsed={effectivelyCollapsed} />
+            </li>
+            <li>
+              <AreaPlantio isCollapsed={effectivelyCollapsed} />
+            </li>
+            <li>
+              <Orcamentos isCollapsed={effectivelyCollapsed} />
+            </li>
+            <li>
+              <PlanejamentoSafra isCollapsed={effectivelyCollapsed} />
+            </li>
+            <li>
+              <Monitoramento isCollapsed={effectivelyCollapsed} />
+            </li>
           </ul>
         </nav>
-      </div>
-    </aside>
+
+        <div className={styles.bottomSection}>
+          <hr className={styles.divider} />
+          <nav className={styles.menu}>
+            {/* Botões de configurações e sair */}
+            <ul className={styles.menuList}>
+              <li>
+                <Configuracoes isCollapsed={effectivelyCollapsed} />
+              </li>
+              <li>
+                <Sair isCollapsed={effectivelyCollapsed} />
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+      {/* Overlay para fechar ao clicar fora no mobile */}
+      {isMobileOpen && (
+        <div
+          className={`${styles.overlay} ${isMobileOpen ? styles.active : ""}`}
+          onClick={onClose}
+        />
+      )}
     </>
   );
 }

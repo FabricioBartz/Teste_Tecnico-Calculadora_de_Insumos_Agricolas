@@ -1,6 +1,6 @@
 /* Estilos gerais para o sidebar */
 .sidebar {
-  width: 240px;
+  width: 236px;
   height: 100vh;
   background-color: #789326;
   display: flex;
@@ -185,7 +185,6 @@
     max-width 0.3s ease,
     margin 0.3s ease,
     padding 0.3s ease,
-    background-color 0s ease !important;
 }
 
 /* Estado Fechando (Collapsed) */
@@ -202,7 +201,6 @@
     max-width 0.3s ease,
     margin 0.3s ease,
     padding 0.3s ease,
-    background-color 0.3s ease !important;
 }
 
 /* --- VERSÃO MOBILE  --- */
@@ -210,10 +208,9 @@
   /* Sidebar como menu flutuante */
   .sidebar {
     position: fixed !important; /* Garante que saia do fluxo do desktop */
-    top: 0;
-    width: 240px !important;    /* FORÇA a largura total no mobile */
+    top: 0;    /* FORÇA a largura total no mobile */
     left: -100%; /* Escondido fora da tela */
-    z-index: 2000;
+    z-index: 2000 !important;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     transition: left 0.3s ease !important; /* Suaviza a entrada lateral */
   }
@@ -242,10 +239,17 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1900;
+    background: rgba(0,0,0,0.32);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    z-index: 1900 !important;
   }
-
+  .overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
   /* Garante que a lista ocupe o espaço correto no mobile */
   .menuList {
     display: flex;
