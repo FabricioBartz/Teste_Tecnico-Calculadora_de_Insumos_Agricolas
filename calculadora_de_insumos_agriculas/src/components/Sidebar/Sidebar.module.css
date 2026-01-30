@@ -40,6 +40,10 @@
 
 /* botao que alterna o sidebar */
 .toggleBtn {
+  width: 40px;
+  height: 48px;
+  justify-content: center; /* Centraliza o ícone da seta dentro do botão */
+  transition: all 0.3s ease;
   right: 10px;
   position: absolute;
   background: none;
@@ -48,6 +52,13 @@
   padding: 4px;
   display: flex;
   align-items: center;
+}
+
+/* Efeito de hover no botão quando a Sidebar está ABERTA */
+.toggleBtn:hover {
+  background-color: #6b8718; /* O mesmo verde escuro que você usa no collapsed */
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
 }
 
 /* ESTADO: SIDEBAR RECOLHIDA (Collapsed) */
@@ -225,7 +236,20 @@
     display: block; /* Só aparece no mobile */
     position: absolute;
     right: 15px;
-    top: 15px;
+    top: 8px;
+    /* Configuração para o hover redondo perfeito */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Garante que o fundo seja circular */
+    transition: background-color 0.2s ease;
+  }
+
+  /* Efeito de hover redondo no mobile */
+  .closeBtnMobile:hover {
+    background-color: #6b8718; /* Mesmo tom de verde escuro */
   }
 
   .toggleBtn {
