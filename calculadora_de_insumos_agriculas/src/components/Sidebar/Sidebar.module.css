@@ -223,11 +223,6 @@
     left: 0 !important;
   }
 
-  /* Quando o estado isMobileOpen for true, ela aparece */
-  .sidebar.mobileActive {
-    left: 0; /* Desliza para dentro da tela [cite: 2026-01-27] */
-  }
-
   /* Botão de fechar (X) no canto superior direito */
   .closeBtnMobile {
     display: block; /* Só aparece no mobile */
