@@ -40,8 +40,8 @@
 
 /* botao que alterna o sidebar */
 .toggleBtn {
-  width: 40px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   justify-content: center; /* Centraliza o ícone da seta dentro do botão */
   transition: all 0.3s ease;
   right: 10px;
@@ -82,8 +82,8 @@
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  width: 40px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   background-color: #6b8718;
   border-radius: 8px;
 
@@ -202,6 +202,7 @@
 .collapsed .menuList li > button,
 .collapsed .menuList li > div,
 .collapsed .menuList li > a {
+  height: 48px !important;
   width: 40px !important;
   max-width: 40px !important;
   margin-left: 5px !important;
@@ -231,25 +232,41 @@
     left: 0 !important;
   }
 
-  /* Botão de fechar (X) no canto superior direito */
+  /* Estilização do botão de fechar (X) */
   .closeBtnMobile {
-    display: block; /* Só aparece no mobile */
+    display: flex !important;
     position: absolute;
     right: 15px;
-    top: 8px;
-    /* Configuração para o hover redondo perfeito */
-    width: 40px;
-    height: 40px;
-    display: flex;
+    
+    /* Centralização perfeita em relação aos 56px de altura do logoContainer */
+    top: 10px; 
+    
+    /* Tamanho 36x36 idêntico ao desktop */
+    width: 36px;
+    height: 36px;
+    
     align-items: center;
     justify-content: center;
-    border-radius: 50%; /* Garante que o fundo seja circular */
+    
+    /* MUDANÇA AQUI: De redondo para quadrado com cantos suaves */
+    border-radius: 8px; 
+    
+    background: none;
+    border: none;
+    cursor: pointer;
     transition: background-color 0.2s ease;
+    padding: 0;
   }
 
-  /* Efeito de hover redondo no mobile */
+  /* Hover quadrado e sólido */
   .closeBtnMobile:hover {
-    background-color: #6b8718; /* Mesmo tom de verde escuro */
+    background-color: #6b8718;
+  }
+
+  .closeBtnMobile img {
+    width: 20px;
+    height: 20px;
+    display: block;
   }
 
   .toggleBtn {
